@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background: green;
+  padding: 10px 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home {
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+}
+
+.main-nav {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.main-nav li {
+  margin-right: 20px;
+}
+.main-nav a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+}
+
+.paragraph {
+  text-align: center;
+}
+
+.Hsection ul {
+  display: flex;
+  list-style-type: none;
+}
+.Hsection ul li {
+  text-decoration: none;
+  background: rgb(158, 156, 156);
+  padding: 1em 1em;
+  width: 80%;
+  margin: 0 1em;
+}/*# sourceMappingURL=main.css.map */

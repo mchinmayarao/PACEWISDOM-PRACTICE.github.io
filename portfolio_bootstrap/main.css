@@ -1,0 +1,71 @@
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css");
+body {
+  font-family: "Arial", sans-serif;
+  color: #333;
+}
+
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 30px 0;
+}
+header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+header p {
+  font-size: 1.2em;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+.card {
+  margin-bottom: 20px;
+  border: 1px solid #007bff;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card .card-body h5 {
+  color: #007bff;
+}
+
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+.bg-light h2 {
+  color: #007bff;
+}
+
+footer {
+  background-color: #343a40;
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 20px 0;
+  }
+  header h1 {
+    font-size: 2em;
+  }
+  header p {
+    font-size: 1em;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+  .card {
+    width: 100%;
+  }
+  footer {
+    font-size: 0.8em;
+  }
+}/*# sourceMappingURL=main.css.map */

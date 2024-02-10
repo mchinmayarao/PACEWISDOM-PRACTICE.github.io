@@ -1,0 +1,34 @@
+.body{
+    background: grey;
+}
+
+.container{
+    margin-top: 100px;
+}
+.newarrival{
+    background: green;
+    width: 50px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+
+}
+.col-md-7 h2{
+    color: #555;
+}
+
+.price{
+    color: #fe980f;
+    font-size: 26px;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+.btn-buy{
+    background: #fe980f;
+    color: #ffffff;
+    font-size: 15px;
+    margin-left: 20px;
+
+
+}

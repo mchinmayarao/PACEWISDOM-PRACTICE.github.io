@@ -15,7 +15,7 @@ export default class KanbanAPI {
 		const item = {
 			id: Math.floor(Math.random() * 100000),
 			content
-		};
+		}; 
 
 		if (!column) {
 			throw new Error("Column does not exist.");

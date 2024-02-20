@@ -1,0 +1,71 @@
+
+body {
+  background-color: #343a40;
+  color: #fff; 
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #454d55; 
+  color: #fff; 
+}
+
+.search-bar {
+  background-color: #1e2124; 
+}
+
+.card-header {
+  background-color: #1e2124;
+  color: #fff; 
+}
+
+.current-weather-card {
+  background-color: #2b2d2f; 
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 20px;
+  max-width: 400px;
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+.current-weather-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.current-weather-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.current-weather-card p {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.forecast-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.forecast-item {
+  background-color: #2b2d2f;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  margin: 10px;
+  flex: 1;
+  max-width: 200px;
+}
+
+.forecast-item img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}

@@ -446,10 +446,10 @@ Recipes
 .recipes-container{
   display: grid;
   gap: 2rem 1rem;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 .tags-container{
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   order: 1;
   display: flex;
   flex-direction: column;
@@ -460,7 +460,7 @@ Recipes
   display: grid;
   gap: 2rem 1rem;
   padding-bottom: 3rem;
-  border: 2px solid green;
+  /* border: 2px solid green; */
 }
 
 .tags-container{

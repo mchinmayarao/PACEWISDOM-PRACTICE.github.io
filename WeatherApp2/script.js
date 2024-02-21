@@ -26,6 +26,8 @@ function displayCurrentWeather(data) {
         <h2>${data.name}, ${data.sys.country}</h2>
         <p>${data.weather[0].description}</p>
         <p>Temperature: ${kelvinToCelsius(data.main.temp)}°C</p>
+        <p>Humidity: ${data.main.humidity}%</p>
+        <p>Wind Speed: ${data.wind.speed} m/s</p>
         <img src="http://openweathermap.org/img/w/${data.weather[0].icon}.png" alt="Weather Icon">
     `;
 }
@@ -43,6 +45,8 @@ function displayForecast(data) {
             <div class="forecast-item">
                 <p>${formatDate(date)}</p>
                 <p>${kelvinToCelsius(forecastItem.main.temp)}°C</p>
+                <p>Humidity: ${forecastItem.main.humidity}%</p>
+                <p>Wind Speed: ${forecastItem.wind.speed} m/s</p>
                 <img src="http://openweathermap.org/img/w/${forecastItem.weather[0].icon}.png" alt="Weather Icon">
             </div>
         `;

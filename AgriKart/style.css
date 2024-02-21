@@ -1,0 +1,49 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  background-color: #D3D3D3;
+  margin-top: 20px;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-right: 15px;
+  transition: all 0.4s;
+}
+
+.nav-item a:hover {
+  color: rgb(98, 170, 113);
+}
+
+.navbar-brand {
+  font-family: "Protest Riot", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: xx-large;
+  color: green;
+}
+
+.img-fluid {
+  border-radius: 25px;
+  height: 80px;
+  width: 150px;
+}
+
+.bi-bag-plus {
+  font-size: 30px;
+  color: black;
+  cursor: pointer;
+  padding-top: 5px;
+  transition: all 0.4s;
+}
+
+.bi-bag-plus:hover {
+  color: rgb(98, 170, 113);
+}/*# sourceMappingURL=style.css.map */

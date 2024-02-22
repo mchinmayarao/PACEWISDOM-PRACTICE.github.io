@@ -141,7 +141,7 @@
     font-size: 0.9rem;
   }
 }
-.container-seeds {
+.container-product {
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
   padding: 3rem;
@@ -153,7 +153,7 @@
   text-align: center;
 }
 
-.seeds-main {
+.product-main {
   background: url(../img/gradient-green.avif) no-repeat;
   background-size: cover;
   height: 100%;

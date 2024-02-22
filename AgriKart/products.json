@@ -1,0 +1,110 @@
+[
+    {
+      "name": "Beetroot Seeds",
+      "price": 248,
+      "rating": 4.5,
+      "imageSrc": "img/seeds/B-Beetroot.png",
+      "seller": "Farmson Biotech"
+    },
+    {
+      "name": "Bitter Gourd Seeds",
+      "price": 188,
+      "rating": 4.2,
+      "imageSrc": "img/seeds/B-BitterGourd.png",
+      "seller": "Farmson Biotech"
+    },
+    {
+      "name": "Brinjal",
+      "price": 328,
+      "rating": 4.0,
+      "imageSrc": "img/seeds/B-Brinjal.png",
+      "seller":"Farmson Biotech"
+    },
+    {
+      "name": "Cabbage",
+      "price": 248,
+      "rating": 4.3,
+      "imageSrc":"img/seeds/B-Cabbage.png",
+      "seller": "Farmson Biotech"
+    },
+
+    {
+      "name": "Capsicum",
+      "price": 342,
+      "rating": 4.6,
+      "imageSrc":"img/seeds/B-Capsicum.png",
+      "seller": "Farmson Biotech"
+    },
+    {
+      "name": "Carrot",
+      "price": 213,
+      "rating": 3.9,
+      "imageSrc":"img/seeds/B-Carrot.png",
+      "seller": "Farmson Biotech"
+    },
+    {
+      "name": "ChiliChitra",
+      "price": 150,
+      "rating": 4.0,
+      "imageSrc":"img/seeds/B-ChiliChitra.png",
+      "seller": "Farmson Biotech"
+    },
+    {
+      "name": "Corn",
+      "price": 200,
+      "rating": 4.0,
+      "imageSrc":"img/seeds/B-Corn.png",
+      "seller": "Farmson Biotech"
+    },
+    {
+      "name": "Cucumber",
+      "price": 320,
+      "rating": 4.3,
+      "imageSrc":"img/seeds/B-Cucumber.png",
+      "seller": "Farmson Biotech"
+    },
+    {
+      "name": "Muskmelon",
+      "price": 367,
+      "rating": 4.2,
+      "imageSrc":"img/seeds/B-Muskmelon.png",
+      "seller": "Farmson Biotech"
+    },
+    {
+      "name": "Okra",
+      "price": 290,
+      "rating": 4.7,
+      "imageSrc":"img/seeds/B-Okra.png",
+      "seller": "Farmson Biotech"
+    },
+    {
+      "name": "Onion",
+      "price": 256,
+      "rating": 3.8,
+      "imageSrc":"img/seeds/B-Onion.png",
+      "seller": "Farmson Biotech"
+    },
+    {
+      "name": "Papaiya",
+      "price": 190,
+      "rating": 4.0,
+      "imageSrc":"img/seeds/B-Papaiya.png",
+      "seller": "Farmson Biotech"
+    },
+    {
+      "name": "Tomato",
+      "price": 410,
+      "rating": 4.9,
+      "imageSrc":"img/seeds/B-Tomato.png",
+      "seller": "Farmson Biotech"
+    },
+    {
+      "name": "Watermelon",
+      "price": 340,
+      "rating": 4.6,
+      "imageSrc":"img/seeds/B-Watermelon.png",
+      "seller": "Farmson Biotech"
+    }
+
+  ]
+  

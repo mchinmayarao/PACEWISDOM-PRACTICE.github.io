@@ -11,6 +11,7 @@
 .navbar {
   background-color: whitesmoke;
   margin-top: 20px;
+  position: relative;
 }
 
 .nav-item a {
@@ -75,6 +76,12 @@
 .main .home-container .mbtn-2:hover {
   background-color: green;
 }
+.main .line {
+  font-size: x-large;
+}
+.main p {
+  font-size: large;
+}
 
 /* Responsive Styles */
 @media (max-width: 768px) {
@@ -89,5 +96,99 @@
   }
   .main .home-container {
     padding: 1rem;
+  }
+}
+.card {
+  margin-bottom: 20px;
+  background-color: whitesmoke;
+  width: 250px;
+  height: 450px;
+}
+
+.card img {
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1rem;
+}
+
+.rating {
+  font-weight: 500;
+  font-size: large;
+  color: gold;
+}
+
+/* Additional styles for mobile responsiveness */
+@media (max-width: 576px) {
+  .card {
+    margin-bottom: 15px;
+  }
+  .card img {
+    height: 150px;
+  }
+  .card-title {
+    font-size: 1rem;
+  }
+  .card-text {
+    font-size: 0.9rem;
+  }
+}
+.container-seeds {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  padding: 5rem;
+  margin-top: 0px;
+  height: 5px;
+}
+
+.seeds-main {
+  background: url(../img/gradient-green.avif) no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+/* Style for the search and cart section */
+.search-cart-section {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+}
+
+.search-cart-section form {
+  display: flex;
+}
+
+@media (max-width: 991px) {
+  .d-flex.fluid {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .form-control {
+    width: 100%;
+    max-width: 100%;
+  }
+  .btn-outline-success {
+    flex-shrink: 0;
+  }
+  .bi-bag-plus {
+    font-size: 30px;
+    color: black;
+    cursor: pointer;
+    padding-top: 5px;
+    transition: all 0.4s;
+  }
+  .bi-bag-plus:hover {
+    color: green;
   }
 }/*# sourceMappingURL=style.css.map */

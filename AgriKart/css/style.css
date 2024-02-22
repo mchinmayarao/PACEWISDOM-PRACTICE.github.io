@@ -61,7 +61,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   padding: 5rem;
-  margin-top: 80px;
+  margin-top: 50px;
 }
 .main .home-container .mbtn-2 {
   height: 50px;
@@ -144,9 +144,13 @@
 .container-seeds {
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
-  padding: 5rem;
+  padding: 3rem;
   margin-top: 0px;
   height: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .seeds-main {

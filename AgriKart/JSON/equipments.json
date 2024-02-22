@@ -1,0 +1,87 @@
+[
+    {
+        "name": "Axe",
+        "price": 150,
+        "rating": 4.0,
+        "imageSrc": "img/equipments/Axe.webp",
+        "seller": "KisanKraft"
+    },
+    {
+        "name": "Drip-pipe",
+        "price": 400,
+        "rating": 4.5,
+        "imageSrc": "img/equipments/Drip-pipe.avif",
+        "seller": "KisanKraft"
+    },
+    {
+        "name": "Hand-Weeder",
+        "price": 320,
+        "rating": 3.9,
+        "imageSrc": "img/equipments/Hand-Weeder.webp",
+        "seller": "KisanKraft"
+    },
+    {
+        "name": "Hoe",
+        "price": 450,
+        "rating": 4.6,
+        "imageSrc": "img/equipments/Hoe.jpeg",
+        "seller": "KisanKraft"
+    },
+    {
+        "name": "Mango-harvester",
+        "price": 230,
+        "rating": 4.3,
+        "imageSrc": "img/equipments/Mango-harvester.avif",
+        "seller": "KisanKraft"
+    },
+    {
+        "name": "Mini-Sprayer",
+        "price": 270,
+        "rating": 4.5,
+        "imageSrc": "img/equipments/Mini-Sprayer.avif",
+        "seller": "KisanKraft"
+    },
+    {
+        "name": "Rubber-Shoes",
+        "price": 340,
+        "rating": 3.9,
+        "imageSrc": "img/equipments/Rubber-Shoes.webp",
+        "seller": "KisanKraft"
+    },
+    {
+        "name": "Secatuer",
+        "price": 460,
+        "rating": 4.8,
+        "imageSrc": "img/equipments/Secatuer.webp",
+        "seller": "KisanKraft"
+    },
+    {
+        "name": "Sickle",
+        "price": 380,
+        "rating": 4.4,
+        "imageSrc": "img/equipments/Sickle.webp",
+        "seller": "KisanKraft"
+    },
+    {
+        "name": "Sprayer",
+        "price": 1300,
+        "rating": 4.7,
+        "imageSrc": "img/equipments/Sprayer.webp ",
+        "seller": "KisanKraft"
+    },
+    {
+        "name": "Tarpaulin",
+        "price": 2500,
+        "rating": 4.5,
+        "imageSrc": "img/equipments/Tarpaulin.avif",
+        "seller": "KisanKraft"
+    },
+    {
+        "name": "Vermicompost-bag",
+        "price": 4560,
+        "rating": 4.3,
+        "imageSrc": "img/equipments/Vermicompost-bag.avif",
+        "seller": "KisanKraft"
+    }
+    
+]

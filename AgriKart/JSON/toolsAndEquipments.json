@@ -1,86 +1,98 @@
 [
     {
+        "id": "T-1",
         "name": "Axe",
         "price": 150,
         "rating": 4.0,
-        "imageSrc": "img/equipments/Axe.webp",
+        "imageSrc": "img/equipments/Axe.jpg",
         "seller": "KisanKraft"
     },
     {
+        "id": "T-2",
         "name": "Drip-pipe",
         "price": 400,
         "rating": 4.5,
-        "imageSrc": "img/equipments/Drip-pipe.avif",
+        "imageSrc": "img/equipments/Drip-pipe.jpg",
         "seller": "KisanKraft"
     },
     {
+        "id": "T-3",
         "name": "Hand-Weeder",
         "price": 320,
         "rating": 3.9,
-        "imageSrc": "img/equipments/Hand-Weeder.webp",
+        "imageSrc": "img/equipments/Hand-Weeder.jpg",
         "seller": "KisanKraft"
     },
     {
+        "id": "T-4",
         "name": "Hoe",
         "price": 450,
         "rating": 4.6,
-        "imageSrc": "img/equipments/Hoe.jpeg",
+        "imageSrc": "img/equipments/Hoe.jpg",
         "seller": "KisanKraft"
     },
     {
+        "id": "T-5",
         "name": "Mango-harvester",
         "price": 230,
         "rating": 4.3,
-        "imageSrc": "img/equipments/Mango-harvester.avif",
+        "imageSrc": "img/equipments/Mango-harvester.jpg",
         "seller": "KisanKraft"
     },
     {
+        "id": "T-6",
         "name": "Mini-Sprayer",
         "price": 270,
         "rating": 4.5,
-        "imageSrc": "img/equipments/Mini-Sprayer.avif",
+        "imageSrc": "img/equipments/Mini-Sprayer.jpg",
         "seller": "KisanKraft"
     },
     {
+        "id": "T-7",
         "name": "Rubber-Shoes",
         "price": 340,
         "rating": 3.9,
-        "imageSrc": "img/equipments/Rubber-Shoes.webp",
+        "imageSrc": "img/equipments/Rubber-Shoes.jpg",
         "seller": "KisanKraft"
     },
     {
+        "id": "T-8",
         "name": "Secatuer",
         "price": 460,
         "rating": 4.8,
-        "imageSrc": "img/equipments/Secatuer.webp",
+        "imageSrc": "img/equipments/Secatuer.jpg",
         "seller": "KisanKraft"
     },
     {
+        "id": "T-9",
         "name": "Sickle",
         "price": 380,
         "rating": 4.4,
-        "imageSrc": "img/equipments/Sickle.webp",
+        "imageSrc": "img/equipments/Sickle.jpg",
         "seller": "KisanKraft"
     },
     {
+        "id": "T-10",
         "name": "Sprayer",
         "price": 1300,
         "rating": 4.7,
-        "imageSrc": "img/equipments/Sprayer.webp ",
+        "imageSrc": "img/equipments/Sprayer.jpg ",
         "seller": "KisanKraft"
     },
     {
+        "id": "T-11",
         "name": "Tarpaulin",
         "price": 2500,
         "rating": 4.5,
-        "imageSrc": "img/equipments/Tarpaulin.avif",
+        "imageSrc": "img/equipments/Tarpaulin.jpg",
         "seller": "KisanKraft"
     },
     {
+        "id": "T-12",
         "name": "Vermicompost-bag",
         "price": 4560,
         "rating": 4.3,
-        "imageSrc": "img/equipments/Vermicompost-bag.avif",
+        "imageSrc": "img/equipments/Vermicompost-bag.jpg",
         "seller": "KisanKraft"
     }
     

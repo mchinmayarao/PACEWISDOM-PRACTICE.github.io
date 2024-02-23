@@ -1,47 +1,54 @@
 [
     {
+        "id": "F-1",
         "name": "Active-Boro",
         "price": 188,
         "rating": 4.5,
-        "imageSrc": "img/fertilizers/Active-Boro.jpeg",
+        "imageSrc": "img/fertilizers/Active-Boro.jpg",
         "seller": "Amruth & Co"
     },
     {
+        "id": "F-2",
         "name": "Alex-Pro",
         "price": 392,
         "rating":3.1,
-        "imageSrc": "img/fertilizers/Alex-Pro.jpeg",
+        "imageSrc": "img/fertilizers/Alex-Pro.jpg",
         "seller":"Amruth & Co" 
     },
     {
+        "id": "F-3",
         "name": "Amezinc",
         "price": 150,
         "rating":4.3,
-        "imageSrc": "img/fertilizers/Amezinc.jpeg",
+        "imageSrc": "img/fertilizers/Amezinc.jpg",
         "seller":"Amruth & Co" 
     },
     {
+        "id": "F-4",
         "name": "Amoga",
         "price": 143,
         "rating":4.6,
-        "imageSrc": "img/fertilizers/Amoga.jpeg",
+        "imageSrc": "img/fertilizers/Amoga.jpg",
         "seller":"Amruth & Co" 
     },
     {
+        "id": "F-5",
         "name": "Balance-nutri",
         "price": 233,
         "rating":3.9,
-        "imageSrc": "img/fertilizers/Balance-nutri.jpeg",
+        "imageSrc": "img/fertilizers/Balance-nutri.jpg",
         "seller":"Amruth & Co" 
     },
     {
+        "id": "F-6",
         "name": "Cotton-grow ",
         "price": 185,
         "rating":4.2,
-        "imageSrc": "img/fertilizers/Cotton-grow.jpeg",
+        "imageSrc": "img/fertilizers/Cotton-grow.jpg",
         "seller":"Amruth & Co" 
     },
     {
+        "id": "F-7",
         "name": "dr-bactos-azo",
         "price": 87,
         "rating":4.1,
@@ -49,31 +56,35 @@
         "seller":"Amruth & Co" 
     },
     {
+        "id": "F-8",
         "name": "INSTACHEAL-FERROUS",
         "price": 162,
         "rating":4.8,
-        "imageSrc": "img/fertilizers/INSTACHEAL-FERROUS.jpeg",
+        "imageSrc": "img/fertilizers/INSTACHEAL-FERROUS.jpg",
         "seller":"Amruth & Co" 
     },
     {
+        "id": "F-9",
         "name": "INSTACHEAL-MAGNESIUM",
         "price": 167,
         "rating":4.7,
-        "imageSrc": "img/fertilizers/INSTACHEAL-MAGNESIUM.jpeg",
+        "imageSrc": "img/fertilizers/INSTACHEAL-MAGNESIUM.jpg",
         "seller":"Amruth & Co" 
     },
     {
+        "id": "F-10",
         "name": "MICRO-SPEED",
         "price": 325,
         "rating":5,
-        "imageSrc": "img/fertilizers/MICRO-SPEED.jpeg",
+        "imageSrc": "img/fertilizers/MICRO-SPEED.jpg",
         "seller":"Amruth & Co" 
     },
     {
+        "id": "F-11",
         "name": "Tabsil",
         "price": 511,
         "rating":3.9,
-        "imageSrc": "img/fertilizers/Tabsil.png",
+        "imageSrc": "img/fertilizers/Tabsil.jpg",
         "seller":"Amruth & Co" 
     }
 ]

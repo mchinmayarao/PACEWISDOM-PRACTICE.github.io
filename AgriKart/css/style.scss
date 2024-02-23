@@ -20,6 +20,7 @@
     position: relative;
 }
 
+// links style
 .nav-item a {
     text-decoration: none;
     color: black;
@@ -34,6 +35,7 @@
 
 }
 
+// webisite i.e AgriKart style
 .navbar-brand {
     font-family: "Protest Riot", sans-serif;
     font-weight: 400;
@@ -42,7 +44,7 @@
     color: green;
 }
 
-
+// cart style 
 .bi-bag-plus {
     font-size: 30px;
     color: black;
@@ -52,6 +54,47 @@
 
     &:hover {
         color: green;
+    }
+}
+
+/* Style for the search and cart section */
+.search-cart-section {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+}
+
+.search-cart-section form {
+    display: flex;
+}
+
+@media (max-width: 991px) {
+    .d-flex.fluid {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .form-control {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .btn-outline-success {
+        flex-shrink: 0;
+    }
+
+    .bi-bag-plus {
+        font-size: 30px;
+        color: black;
+        cursor: pointer;
+        padding-top: 5px;
+        transition: all 0.4s;
+
+        &:hover {
+            color: green;
+        }
     }
 }
 
@@ -71,13 +114,14 @@
         font-style: normal;
     }
 
-    // Style for adding a black transparent
+    // Style for adding a black transparent box
     .home-container {
         background-color: rgba(0, 0, 0, 0.5);
         color: white;
         padding: 5rem;
         margin-top: 50px;
-
+        
+        // shop now button
         .mbtn-2 {
             height: 50px;
             width: 25%;
@@ -93,7 +137,7 @@
             }
         }
     }
-
+    // quote line style 
     .line {
         font-size: x-large;
     }
@@ -126,7 +170,7 @@
 }
 
 
-
+// product card style 
 .card {
     margin-bottom: 20px;
     background-color: whitesmoke;
@@ -176,7 +220,7 @@
 }
 
 
-
+// style for displaying the product category in the top of the respective page within a black, transparent rectangle box
 .container-product {
     background-color: rgba(0, 0, 0, 0.3);
     color: white;
@@ -189,7 +233,7 @@
     text-align: center;
 
 }
-
+// background img 
 .product-main {
     background: url(../img/gradient-green.avif) no-repeat;
     background-size: cover;
@@ -197,45 +241,5 @@
     width: 100%;
 }
 
-/* Style for the search and cart section */
-.search-cart-section {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 10px;
-}
-
-.search-cart-section form {
-    display: flex;
-}
 
 
-
-@media (max-width: 991px) {
-    .d-flex.fluid {
-        width: 100%;
-        justify-content: center;
-        margin-bottom: 10px;
-    }
-
-    .form-control {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .btn-outline-success {
-        flex-shrink: 0;
-    }
-
-    .bi-bag-plus {
-        font-size: 30px;
-        color: black;
-        cursor: pointer;
-        padding-top: 5px;
-        transition: all 0.4s;
-
-        &:hover {
-            color: green;
-        }
-    }
-}

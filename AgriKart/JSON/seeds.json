@@ -1,5 +1,6 @@
 [
     {
+      "id":"S-1",
       "name": "Beetroot Seeds",
       "price": 248,
       "rating": 4.5,
@@ -7,6 +8,7 @@
       "seller": "Farmson Biotech"
     },
     {
+      "id":"S-2",
       "name": "Bitter Gourd Seeds",
       "price": 188,
       "rating": 4.2,
@@ -14,6 +16,7 @@
       "seller": "Farmson Biotech"
     },
     {
+      "id":"S-3",
       "name": "Brinjal",
       "price": 328,
       "rating": 4.0,
@@ -21,6 +24,7 @@
       "seller":"Farmson Biotech"
     },
     {
+      "id":"S-4",
       "name": "Cabbage",
       "price": 248,
       "rating": 4.3,
@@ -29,6 +33,7 @@
     },
 
     {
+      "id":"S-5",
       "name": "Capsicum",
       "price": 342,
       "rating": 4.6,
@@ -36,6 +41,7 @@
       "seller": "Farmson Biotech"
     },
     {
+      "id":"S-6",
       "name": "Carrot",
       "price": 213,
       "rating": 3.9,
@@ -43,6 +49,7 @@
       "seller": "Farmson Biotech"
     },
     {
+      "id":"S-7",
       "name": "ChiliChitra",
       "price": 150,
       "rating": 4.0,
@@ -50,6 +57,7 @@
       "seller": "Farmson Biotech"
     },
     {
+      "id":"S-8",
       "name": "Corn",
       "price": 200,
       "rating": 4.0,
@@ -57,6 +65,7 @@
       "seller": "Farmson Biotech"
     },
     {
+      "id":"S-9",
       "name": "Cucumber",
       "price": 320,
       "rating": 4.3,
@@ -64,6 +73,7 @@
       "seller": "Farmson Biotech"
     },
     {
+      "id": "S-10",
       "name": "Muskmelon",
       "price": 367,
       "rating": 4.2,
@@ -71,6 +81,7 @@
       "seller": "Farmson Biotech"
     },
     {
+      "id": "S-11",
       "name": "Okra",
       "price": 290,
       "rating": 4.7,
@@ -78,6 +89,7 @@
       "seller": "Farmson Biotech"
     },
     {
+      "id": "S-12",
       "name": "Onion",
       "price": 256,
       "rating": 3.8,
@@ -85,6 +97,7 @@
       "seller": "Farmson Biotech"
     },
     {
+      "id": "S-13",
       "name": "Papaiya",
       "price": 190,
       "rating": 4.0,
@@ -92,6 +105,7 @@
       "seller": "Farmson Biotech"
     },
     {
+      "id": "S-14",
       "name": "Tomato",
       "price": 410,
       "rating": 4.9,
@@ -99,6 +113,7 @@
       "seller": "Farmson Biotech"
     },
     {
+      "id": "S-15",
       "name": "Watermelon",
       "price": 340,
       "rating": 4.6,

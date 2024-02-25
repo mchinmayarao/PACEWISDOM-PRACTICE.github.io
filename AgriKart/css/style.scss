@@ -169,56 +169,9 @@
     }
 }
 
-
-// product card style 
-.card {
-    margin-bottom: 20px;
-    background-color: whitesmoke;
-    width: 250px;
-    height: 450px;
-
-
-}
-
-.card img {
-    height: 200px;
-    object-fit: cover;
-}
-
-.card-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-.card-text {
-    font-size: 1rem;
-}
-
-.rating {
-    font-weight: 500;
-    font-size: large;
+.rating{
     color: gold;
 }
-
-/* Additional styles for mobile responsiveness */
-@media (max-width: 576px) {
-    .card {
-        margin-bottom: 15px;
-    }
-
-    .card img {
-        height: 150px;
-    }
-
-    .card-title {
-        font-size: 1rem;
-    }
-
-    .card-text {
-        font-size: 0.9rem;
-    }
-}
-
 
 // style for displaying the product category in the top of the respective page within a black, transparent rectangle box
 .container-product {
@@ -235,11 +188,10 @@
 }
 // background img 
 .product-main {
-    background: url(../img/gradient-green.avif) no-repeat;
+    background: whitesmoke;
     background-size: cover;
     height: 100%;
     width: 100%;
 }
-
 
 

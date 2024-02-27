@@ -46,10 +46,16 @@ for(let i = 0; i<cartItems.length;i++) {
         '</div>' +
         '<div class="col-lg col-sm-6 d-flex justify-content-sm-center justify-content-md-start justify-content-lg-center justify-content-xl-end mb-2">' +
         '<div class="float-md-end">' +
-        '<a href="#" class="btn btn-light border text-danger icon-hover-danger"> Remove</a>' +
+        '<a href="#" class="btn btn-light border text-danger icon-hover-danger" onclick="removeFromCart(' + i + ')"> Remove</a>' +
         '</div>' +
         '</div>' +
         '</div>');
 
     $('#cartItems').append(cartItemElement);
+}
+
+function removeFromCart(index) {
+    cartItems.splice(index, 1);
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    location.reload(); // Refresh the page to reflect the updated cart
 }

@@ -93,3 +93,29 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+function addCardDetails(){
+    var x = document.getElementById("card-details");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+};
+
+function showCardDetails(){
+    document.getElementById('cardDetails').style.display = 'block';
+    document.getElementById('UpiDetails').style.display = 'none';
+    document.getElementById('CODDetails').style.display = 'none';
+}
+
+function showUpiDetails(){
+    document.getElementById('cardDetails').style.display = 'none';
+    document.getElementById('UpiDetails').style.display = 'block';
+    document.getElementById('CODDetails').style.display = 'none';
+}
+
+function showCOD(){
+    document.getElementById('cardDetails').style.display = 'none';
+    document.getElementById('UpiDetails').style.display = 'none';
+    document.getElementById('CODDetails').style.display = 'block';
+}

@@ -90,6 +90,7 @@ var totPrice = totPrice_cal();
 var discount = parseFloat((0.05 * totPrice).toFixed(2));
 var tax = parseFloat((0.18 * totPrice).toFixed(2));
 var finalPrice = totPrice - discount + tax;
+localStorage.setItem('finalPrice',finalPrice);
 document.getElementById("totPrice").innerHTML = "₹ " + totPrice;
 document.getElementById("Discount").innerHTML = "₹ - " + discount;
 document.getElementById("tax").innerHTML = "₹ + " + tax;

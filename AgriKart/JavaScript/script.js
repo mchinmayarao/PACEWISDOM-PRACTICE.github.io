@@ -68,13 +68,13 @@ function displayProducts(data) {
 
 (function () {
     function search() {
-        
+
         var searchTerm = document.getElementById('search-form').value.toLowerCase();
         // Get all products from JSON
         if (searchTerm == '') {
             location.reload();
         } else {
-            document.getElementById("product-text").innerHTML="Search Results From All Product Range";
+            document.getElementById("product-text").innerHTML = "Search Results From All Product Range";
             console.log(searchTerm);
             $.getJSON('../JSON/products.json', function (data) {
                 var filteredProducts = [];
@@ -91,7 +91,7 @@ function displayProducts(data) {
                 });
                 console.log(filteredProducts);
                 // Display filtered products
-                
+
                 $('#productRow').empty();
                 displayProducts(filteredProducts);
             });
@@ -99,12 +99,12 @@ function displayProducts(data) {
     }
 
     var searchInput = document.getElementById('search-form');
-    
+
     if (searchInput) {
-        
+
         // input event for real-time search
         searchInput.addEventListener('input', search, true);
-        
+
     }
     var searchBtn = document.getElementById('search-btn');
 
@@ -130,4 +130,39 @@ function showCOD() {
     document.getElementById('cardDetails').style.display = 'none';
     document.getElementById('UpiDetails').style.display = 'none';
     document.getElementById('CODDetails').style.display = 'block';
+}
+
+
+
+var rangeInput = document.getElementById('ratingRange');
+var ratingValue = document.getElementById('ratingValue');
+
+
+rangeInput.addEventListener('input', function () {
+   
+    ratingValue.textContent = rangeInput.value;
+
+    filterAndDisplayProducts(rangeInput.value);
+});
+
+//  display products based on the rating range
+function filterAndDisplayProducts(currentRating) {
+    $.getJSON('../JSON/products.json', function (data) {
+        var filteredProducts = [];
+
+        $.each(data, function (index, category) {
+            $.each(category, function (key, products) {
+                $.each(products, function (i, product) {
+                    var productRating = parseInt(product.rating);
+                    if (productRating >= 0 && productRating <= currentRating) {
+                        filteredProducts.push(product);
+                    }
+                });
+            });
+        });
+
+        // Display filtered products
+        $('#productRow').empty();
+        displayProducts(filteredProducts);
+    });
 }

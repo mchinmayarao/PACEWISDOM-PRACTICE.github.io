@@ -68,11 +68,13 @@ function displayProducts(data) {
 
 (function () {
     function search() {
+        
         var searchTerm = document.getElementById('search-form').value.toLowerCase();
         // Get all products from JSON
         if (searchTerm == '') {
             location.reload();
         } else {
+            document.getElementById("product-text").innerHTML="Search Results From All Product Range";
             console.log(searchTerm);
             $.getJSON('../JSON/products.json', function (data) {
                 var filteredProducts = [];
@@ -89,6 +91,7 @@ function displayProducts(data) {
                 });
                 console.log(filteredProducts);
                 // Display filtered products
+                
                 $('#productRow').empty();
                 displayProducts(filteredProducts);
             });
@@ -96,10 +99,12 @@ function displayProducts(data) {
     }
 
     var searchInput = document.getElementById('search-form');
-
+    
     if (searchInput) {
+        
         // input event for real-time search
         searchInput.addEventListener('input', search, true);
+        
     }
     var searchBtn = document.getElementById('search-btn');
 

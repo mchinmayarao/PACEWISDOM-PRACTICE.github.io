@@ -109,15 +109,6 @@ function displayProducts(data) {
 })();
 
 
-function addCardDetails() {
-    var x = document.getElementById("card-details");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-};
-
 function showCardDetails() {
     document.getElementById('cardDetails').style.display = 'block';
     document.getElementById('UpiDetails').style.display = 'none';

@@ -173,4 +173,8 @@
 
 .icon-hover-danger:hover i {
   color: #dc4c64 !important;
+}
+
+.card-text {
+  margin-bottom: 5px;
 }/*# sourceMappingURL=style.css.map */

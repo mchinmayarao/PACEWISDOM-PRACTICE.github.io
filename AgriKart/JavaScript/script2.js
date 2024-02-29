@@ -1,18 +1,28 @@
 
 function addToCart(productName, productId, productImageSrc, productPrice) {
-    var cartItem = {
-        productName: productName,
-        productId: productId,
-        productImageSrc: productImageSrc,
-        productPrice: productPrice,
-        quantity:1
-    };
-
     var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-    cartItems.push(cartItem);
-    localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    alert('Added ' + productName + ' to the cart!');
+
+    // Check if the product is already in the cart
+    var existingItem = cartItems.find(item => item.productId === productId);
+
+    if (existingItem) {
+        alert('Item ' + productName + ' is already in the cart!');
+    } else {
+        var cartItem = {
+            productName: productName,
+            productId: productId,
+            productImageSrc: productImageSrc,
+            productPrice: productPrice,
+            quantity: 1
+        };
+
+        cartItems.push(cartItem);
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        alert('Added ' + productName + ' to the cart!');
+        location.reload();
+    }
 }
+
 
 var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 var cartItemCount = cartItems.length;
@@ -48,6 +58,12 @@ function renderCartItems(cartItem, i) {
         '<option value="2" ' + (cartItem.quantity == 2 ? 'selected' : '') + '>2</option>' +
         '<option value="3" ' + (cartItem.quantity == 3 ? 'selected' : '') + '>3</option>' +
         '<option value="4" ' + (cartItem.quantity == 4 ? 'selected' : '') + '>4</option>' +
+        '<option value="5" ' + (cartItem.quantity == 5 ? 'selected' : '') + '>5</option>' +
+        '<option value="6" ' + (cartItem.quantity == 6 ? 'selected' : '') + '>6</option>' +
+        '<option value="7" ' + (cartItem.quantity == 7 ? 'selected' : '') + '>7</option>' +
+        '<option value="8" ' + (cartItem.quantity == 8 ? 'selected' : '') + '>8</option>' +
+        '<option value="9" ' + (cartItem.quantity == 9 ? 'selected' : '') + '>9</option>' +
+        '<option value="10" ' + (cartItem.quantity == 10 ? 'selected' : '') + '>10</option>' +
         '</select>' +
         '</div>' +
         '<div class="">' +
@@ -66,6 +82,7 @@ function renderCartItems(cartItem, i) {
 
 }
 
+// display cart items
 for (let i = 0; i < cartItems.length; i++) {
 
     cartItemElement = renderCartItems(cartItems[i], i);
@@ -75,7 +92,7 @@ for (let i = 0; i < cartItems.length; i++) {
 
 }
 
-
+// total price calculation
 function totPrice_cal(){
     var totPrice = 0;
     for (let i = 0; i < cartItems.length; i++) {
@@ -84,6 +101,8 @@ function totPrice_cal(){
 
     return totPrice;
 }
+
+// remove item from the cart 
 function removeFromCart(index) {
     cartItems.splice(index, 1);
     localStorage.setItem('cartItems', JSON.stringify(cartItems));

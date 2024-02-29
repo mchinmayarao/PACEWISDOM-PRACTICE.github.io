@@ -3,7 +3,7 @@
 var currentPageCategory = getPageCategory();
 // console.log(currentPageCategory);
 
-switch (currentPageCategory){
+switch (currentPageCategory) {
     case "fertilizers":
         $.getJSON('../JSON/products.json', function (data) {
             // console.log(data[0]["fertilizers"]);
@@ -29,8 +29,8 @@ switch (currentPageCategory){
             displayProducts(data[2]["toolsAndEquipments"]);
         });
         break;
-        
-    
+
+
 }
 
 
@@ -43,19 +43,18 @@ function getPageCategory() {
     return currentPage.toLowerCase();
 }
 
-// Function to display products dynamically
 function displayProducts(data) {
     $.each(data, function (index, product) {
         // Bootstrap card for each product
         var card = $('<div class="col-md-4">' +
-            '<div class="card"id = "' + product.id + '">' +
-            '<img src="../' + product.imageSrc + '" class="card-img-top" alt="' + product.name + '" style="padding: 10px;">' +
-            '<div class="card-body">' +
+            '<div class="card" id="' + product.id + '" style="margin-bottom: 15px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">' +
+            '<img src="../' + product.imageSrc + '" class="card-img-top img-fluid" alt="' + product.name + '" style="padding: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;">' +
+            '<div class="card-body" style="padding: 10px;">' +
             '<h5 class="card-title">' + product.name + '</h5>' +
-            '<p class="card-text">Price: ₹ ' + product.price.toFixed(2) + '</p>' +
-            '<p class="card-text">Rating: <span class="rating">' + product.rating + '</span></p>' +
-            '<p class="card-text">Seller: ' + product.seller + '</p>' +
-            '<button class="btn btn-success btn-sm" onclick="addToCart(\'' + product.name+'\',\''+product.id+'\',\''+product.imageSrc+'\','+product.price + ')">Add to Cart</button>' +
+            '<p class="card-text"><strong>Price:</strong> ₹ ' + product.price.toFixed(2) + '</p>' +
+            '<p class="card-text"><strong>Rating:</strong> <span class="badge bg-info">' + product.rating + '</span></p>' +
+            '<p class="card-text"><strong>Seller:</strong> ' + product.seller + '</p>' +
+            '<button class="btn btn-success btn-sm" onclick="addToCart(\'' + product.name + '\',\'' + product.id + '\',\'' + product.imageSrc + '\',' + product.price + ')">Add to Cart</button>' +
             '</div>' +
             '</div>' +
             '</div>');
@@ -66,55 +65,72 @@ function displayProducts(data) {
 }
 
 
+
 (function () {
     function search() {
-        var txt = document.getElementById('search-form').value;
-        console.log(txt);
+        var searchTerm = document.getElementById('search-form').value.toLowerCase();
+        // Get all products from JSON
+        if (searchTerm == '') {
+            location.reload();
+        } else {
+            console.log(searchTerm);
+            $.getJSON('../JSON/products.json', function (data) {
+                var filteredProducts = [];
+
+                // Iterate through all categories and products to find a match
+                $.each(data, function (index, category) {
+                    $.each(category, function (key, products) {
+                        $.each(products, function (i, product) {
+                            if (product.name.toLowerCase().includes(searchTerm)) {
+                                filteredProducts.push(product);
+                            }
+                        });
+                    });
+                });
+                console.log(filteredProducts);
+                // Display filtered products
+                $('#productRow').empty();
+                displayProducts(filteredProducts);
+            });
+        }
     }
 
-    document.getElementById('search-btn').addEventListener('click', search, true);
+    var searchInput = document.getElementById('search-form');
+
+    if (searchInput) {
+        // input event for real-time search
+        searchInput.addEventListener('input', search, true);
+    }
+    var searchBtn = document.getElementById('search-btn');
+
+    if (searchBtn) {
+        searchBtn.addEventListener('click', search, true);
+    }
 })();
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.querySelectorAll('.needs-validation');
-
-    // Loop over them and prevent submission
-    Array.from(forms).forEach(function (form) {
-        form.addEventListener('submit', function (event) {
-            if (!form.checkValidity()) {
-                event.preventDefault();
-                event.stopPropagation();
-            }
-
-            form.classList.add('was-validated');
-        });
-    });
-});
-
-function addCardDetails(){
+function addCardDetails() {
     var x = document.getElementById("card-details");
     if (x.style.display === "none") {
         x.style.display = "block";
-      } else {
+    } else {
         x.style.display = "none";
-      }
+    }
 };
 
-function showCardDetails(){
+function showCardDetails() {
     document.getElementById('cardDetails').style.display = 'block';
     document.getElementById('UpiDetails').style.display = 'none';
     document.getElementById('CODDetails').style.display = 'none';
 }
 
-function showUpiDetails(){
+function showUpiDetails() {
     document.getElementById('cardDetails').style.display = 'none';
     document.getElementById('UpiDetails').style.display = 'block';
     document.getElementById('CODDetails').style.display = 'none';
 }
 
-function showCOD(){
+function showCOD() {
     document.getElementById('cardDetails').style.display = 'none';
     document.getElementById('UpiDetails').style.display = 'none';
     document.getElementById('CODDetails').style.display = 'block';

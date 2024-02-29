@@ -15,6 +15,10 @@ function addToCart(productName, productId, productImageSrc, productPrice) {
 }
 
 var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+var cartItemCount = cartItems.length;
+// Update the cart badge content
+$('#cartItemCount').text(cartItemCount);
+
 
 function priceUpdate(index) {
     let quantity = document.querySelector('.form-select[data-index="' + index + '"]').value;
@@ -87,12 +91,35 @@ function removeFromCart(index) {
 }
 
 var totPrice = totPrice_cal();
+
+// Calculate discount, tax, and finalPrice
 var discount = parseFloat((0.05 * totPrice).toFixed(2));
 var tax = parseFloat((0.18 * totPrice).toFixed(2));
 var finalPrice = totPrice - discount + tax;
-localStorage.setItem('finalPrice',finalPrice);
-document.getElementById("totPrice").innerHTML = "₹ " + totPrice;
-document.getElementById("Discount").innerHTML = "₹ - " + discount;
-document.getElementById("tax").innerHTML = "₹ + " + tax;
-document.getElementById("finalPrice").innerHTML = "₹ + " + finalPrice;
+
+// Set values only if corresponding elements exist
+var totPriceElement = document.getElementById('totPrice');
+var discountElement = document.getElementById('Discount');
+var taxElement = document.getElementById('tax');
+var finalPriceElement = document.getElementById('finalPrice');
+
+if (totPriceElement) {
+    totPriceElement.innerHTML = "₹ " + totPrice;
+}
+
+if (discountElement) {
+    discountElement.innerHTML = "₹ - " + discount;
+}
+
+if (taxElement) {
+    taxElement.innerHTML = "₹ + " + tax;
+}
+
+if (finalPriceElement) {
+    finalPriceElement.innerHTML = "₹ + " + finalPrice;
+}
+
+// Store finalPrice in localStorage
+localStorage.setItem('finalPrice', finalPrice);
+
 

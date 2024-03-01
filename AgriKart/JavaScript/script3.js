@@ -28,7 +28,6 @@ function validateForm() {
     // Get all the required input elements
     const firstName = document.getElementById('firstName');
     const lastName = document.getElementById('lastName');
-    const username = document.getElementById('username');
     const phoneNumber = document.getElementById('phoneNumber');
     const address = document.getElementById('address');
     const zip = document.getElementById('zip');
@@ -44,7 +43,6 @@ function validateForm() {
     if (
         validateInput(firstName) &&
         validateInput(lastName) &&
-        validateInput(username) &&
         validateInput(phoneNumber) &&
         validateInput(address) &&
         validateInput(zip) &&
@@ -66,7 +64,6 @@ function handleSubmit(event) {
     const form = document.querySelector('.needs-validation');
     const firstName = document.getElementById('firstName');
     const lastName = document.getElementById('lastName');
-    const username = document.getElementById('username');
     const email = document.getElementById('email');
     const phoneNumber = document.getElementById('phoneNumber');
     const address = document.getElementById('address');
@@ -93,12 +90,7 @@ function handleSubmit(event) {
         isValid = false;
     }
 
-    if (username.value === "") {
-        username.classList.add('is-invalid');
-        isValid = false;
-    }
-
-    if (email.value !== "" && !validateEmail(email.value)) {
+    if (email.value == "" && !validateEmail(email.value)) {
         email.classList.add('is-invalid');
         isValid = false;
     }

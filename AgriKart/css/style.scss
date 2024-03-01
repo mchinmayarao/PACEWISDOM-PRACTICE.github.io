@@ -167,6 +167,10 @@
             padding: 1rem;
         }
     }
+    .addToCart{
+        width: 100%;
+    }
+
 }
 
 .rating{
@@ -175,7 +179,7 @@
 
 // style for displaying the product category in the top of the respective page within a black, transparent rectangle box
 .container-product {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(37, 154, 70, 0.67);
     color: white;
     padding: 3rem;
     margin-top: 0px;
@@ -216,5 +220,7 @@
   .card-text{
     margin-bottom: 5px;
   }
-
-  
+.card-body{
+    margin-right: 1rem;
+    margin-left: 1rem;
+}

@@ -133,13 +133,16 @@
   .main .home-container {
     padding: 1rem;
   }
+  .addToCart {
+    width: 100%;
+  }
 }
 .rating {
   color: gold;
 }
 
 .container-product {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(37, 154, 70, 0.67);
   color: white;
   padding: 3rem;
   margin-top: 0px;
@@ -177,4 +180,9 @@
 
 .card-text {
   margin-bottom: 5px;
+}
+
+.card-body {
+  margin-right: 1rem;
+  margin-left: 1rem;
 }/*# sourceMappingURL=style.css.map */

@@ -59,7 +59,7 @@
       },
       {
         "id": "F-8",
-        "name": "INSTACHEAL-FERROUS",
+        "name": "INSTA-FERROUS",
         "price": 162,
         "rating": 4.8,
         "imageSrc": "img/fertilizers/INSTACHEAL-FERROUS.jpg",
@@ -67,7 +67,7 @@
       },
       {
         "id": "F-9",
-        "name": "INSTACHEAL-MAGNESIUM",
+        "name": "INSTA-MAGNESIUM",
         "price": 167,
         "rating": 4.7,
         "imageSrc": "img/fertilizers/INSTACHEAL-MAGNESIUM.jpg",

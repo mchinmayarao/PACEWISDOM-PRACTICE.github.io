@@ -114,7 +114,7 @@ var totPrice = totPrice_cal();
 // Calculate discount, tax, and finalPrice
 var discount = parseFloat((0.05 * totPrice).toFixed(2));
 var tax = parseFloat((0.18 * totPrice).toFixed(2));
-var finalPrice = totPrice - discount + tax;
+var finalPrice = parseFloat((totPrice - discount + tax).toFixed(2));
 
 // Set values only if corresponding elements exist
 var totPriceElement = document.getElementById('totPrice');
@@ -135,7 +135,7 @@ if (taxElement) {
 }
 
 if (finalPriceElement) {
-    finalPriceElement.innerHTML = "₹ + " + finalPrice;
+    finalPriceElement.innerHTML = "₹ " + finalPrice;
 }
 
 // Store finalPrice in localStorage

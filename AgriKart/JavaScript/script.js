@@ -6,7 +6,7 @@ function getPageCategory() {
 }
 
 var currentPageCategory = getPageCategory();
-// console.log(currentPageCategory);
+console.log(currentPageCategory);
 
 function getPageCategoryIndex() {
 
@@ -17,7 +17,7 @@ function getPageCategoryIndex() {
             return 1;
         case "toolsAndEquipments":
             return 2;
-        case "allproducts":
+        case "allProducts":
             break;
     }
 
@@ -46,7 +46,7 @@ switch (currentPageCategory) {
             displayProducts(data[2]["toolsAndEquipments"]);
         });
         break;
-    case "allproducts":
+    case "allProducts":
         $.getJSON('../JSON/products.json', function (data) {
             displayProducts(data[0]["fertilizers"]);
             displayProducts(data[1]["seeds"]);
@@ -171,7 +171,7 @@ function filterAndDisplayProducts(currentRating, data) {
     $.getJSON('../JSON/products.json', function (data) {
         var filteredProducts = [];
 
-        if (currentPageCategory == "allproducts") {
+        if (currentPageCategory == "allProducts") {
             $.each(data, function (index, category) {
                 // console.log(index);
                 $.each(category, function (key, products) {

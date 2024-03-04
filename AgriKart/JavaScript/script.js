@@ -1,12 +1,36 @@
 
+function getPageCategory() {
+    var pathArray = window.location.pathname.split('/');
+    var currentPage = pathArray[pathArray.length - 1].split('.')[0];
+    return currentPage;
+}
 
 var currentPageCategory = getPageCategory();
 // console.log(currentPageCategory);
 
+function getPageCategoryIndex() {
+
+    switch (currentPageCategory) {
+        case "fertilizers":
+            return 0;
+        case "seeds":
+            return 1;
+        case "toolsAndEquipments":
+            return 2;
+        case "allproducts":
+            break;
+    }
+
+}
+
+var currentPageCategoryIndex = getPageCategoryIndex();
+// console.log(currentPageCategoryIndex);
+
 switch (currentPageCategory) {
     case "fertilizers":
         $.getJSON('../JSON/products.json', function (data) {
-            // console.log(data[0]["fertilizers"]);
+            // console.log(key);
+            console.log(data);
             displayProducts(data[0]["fertilizers"]);
         });
         break;
@@ -16,7 +40,7 @@ switch (currentPageCategory) {
             displayProducts(data[1]["seeds"]);
         });
         break;
-    case "toolsandequipments":
+    case "toolsAndEquipments":
         $.getJSON('../JSON/products.json', function (data) {
             // console.log(data[2]["toolsAndEquipments"]);
             displayProducts(data[2]["toolsAndEquipments"]);
@@ -37,11 +61,6 @@ switch (currentPageCategory) {
 
 
 
-function getPageCategory() {
-    var pathArray = window.location.pathname.split('/');
-    var currentPage = pathArray[pathArray.length - 1].split('.')[0];
-    return currentPage.toLowerCase();
-}
 
 function displayProducts(data) {
     $.each(data, function (index, product) {
@@ -54,7 +73,9 @@ function displayProducts(data) {
             '<p class="card-text"><strong>Price:</strong> ₹ ' + product.price.toFixed(2) + '</p>' +
             '<p class="card-text"><strong>Rating:</strong> <span class="badge bg-info">' + product.rating + '</span></p>' +
             '<p class="card-text"><strong>Seller:</strong> ' + product.seller + '</p>' +
-            '<button class="btn btn-success btn-sm" onclick="addToCart(\'' + product.name + '\',\'' + product.id + '\',\'' + product.imageSrc + '\',' + product.price + ')">Add to Cart</button>' +
+            '<div class="text-center ">'+
+            '<button class="btn btn-success addToCart" style="margin-bottom:10px;margin-top:10px" onclick="addToCart(\'' + product.name + '\',\'' + product.id + '\',\'' + product.imageSrc + '\',' + product.price + ')">Add to Cart</button>' +
+            '</div>' +
             '</div>' +
             '</div>' +
             '</div>');
@@ -139,30 +160,44 @@ var ratingValue = document.getElementById('ratingValue');
 
 
 rangeInput.addEventListener('input', function () {
-   
-    ratingValue.textContent = rangeInput.value;
 
+    ratingValue.textContent = rangeInput.value + " and above";
+    console.log(rangeInput.value);
     filterAndDisplayProducts(rangeInput.value);
 });
 
 //  display products based on the rating range
-function filterAndDisplayProducts(currentRating) {
+function filterAndDisplayProducts(currentRating, data) {
     $.getJSON('../JSON/products.json', function (data) {
         var filteredProducts = [];
 
-        $.each(data, function (index, category) {
-            $.each(category, function (key, products) {
-                $.each(products, function (i, product) {
-                    var productRating = parseInt(product.rating);
-                    if (productRating >= 0 && productRating <= currentRating) {
-                        filteredProducts.push(product);
-                    }
+        if (currentPageCategory == "allproducts") {
+            $.each(data, function (index, category) {
+                // console.log(index);
+                $.each(category, function (key, products) {
+                    // console.log(category);
+                    $.each(products, function (i, product) {
+                        var productRating = parseInt(product.rating);
+                        if (productRating >= currentRating) {
+                            filteredProducts.push(product);
+                        }
+                    });
                 });
             });
-        });
+        }
+        else {
+            products = data[currentPageCategoryIndex][currentPageCategory];
+            $.each(products, function (i, product) {
+                var productRating = parseInt(product.rating);
+                if (productRating >= currentRating) {
+                    filteredProducts.push(product);
+                }
+            });
+        }
 
         // Display filtered products
         $('#productRow').empty();
         displayProducts(filteredProducts);
     });
+
 }

@@ -64,17 +64,20 @@ switch (currentPageCategory) {
 
 function displayProducts(data) {
     $.each(data, function (index, product) {
+        // Check if discount is available
+        var discountedPrice = (product.discount / 100) * product.price;
         // Bootstrap card for each product
         var card = $('<div class="col-md-4">' +
             '<div class="card" id="' + product.id + '" style="margin-bottom: 15px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">' +
             '<img src="../' + product.imageSrc + '" class="card-img-top img-fluid" alt="' + product.name + '" style="padding: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;">' +
             '<div class="card-body" style="padding: 10px;">' +
             '<h5 class="card-title">' + product.name + '</h5>' +
-            '<p class="card-text"><strong>Price:</strong> ₹ ' + product.price.toFixed(2) + '</p>' +
+            '<p class="card-text"><strong>Price:</strong> ₹ <span class="original-price">' + product.price.toFixed(2) + '</span></p>' +
+            '<p class="card-text"><strong>Discounted Price:</strong> ₹ <span class="discounted-price">' + discountedPrice.toFixed(2) + '</span></p>' +
             '<p class="card-text"><strong>Rating:</strong> <span class="badge bg-info">' + product.rating + '</span></p>' +
             '<p class="card-text"><strong>Seller:</strong> ' + product.seller + '</p>' +
             '<div class="text-center ">'+
-            '<button class="btn btn-success addToCart" style="margin-bottom:10px;margin-top:10px" onclick="addToCart(\'' + product.name + '\',\'' + product.id + '\',\'' + product.imageSrc + '\',' + product.price + ')">Add to Cart</button>' +
+            '<button class="btn btn-success addToCart" style="margin-bottom:10px;margin-top:10px" onclick="addToCart(\'' + product.name + '\',\'' + product.id + '\',\'' + product.imageSrc + '\',' + discountedPrice + ')">Add to Cart</button>' +
             '</div>' +
             '</div>' +
             '</div>' +
@@ -84,7 +87,6 @@ function displayProducts(data) {
         $('#productRow').append(card);
     });
 }
-
 
 
 (function () {

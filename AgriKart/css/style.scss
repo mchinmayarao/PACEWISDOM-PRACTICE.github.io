@@ -121,21 +121,7 @@
         padding: 5rem;
         margin-top: 50px;
         
-        // shop now button
-        .mbtn-2 {
-            height: 50px;
-            width: 25%;
-            outline: none;
-            background-color: transparent;
-            color: white;
-            border: 1px solid white;
-            border-radius: 50px;
-            transition: all 0.4s;
-
-            &:hover {
-                background-color: green;
-            }
-        }
+      
     }
     // quote line style 
     .line {
@@ -146,7 +132,21 @@
         font-size: large;
     }
 }
+  // shop now button
+  .mbtn-2 {
+    height: 50px;
+    width: 25%;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 50px;
+    transition: all 0.4s;
 
+    &:hover {
+        background-color: green;
+    }
+}
 /* Responsive Styles */
 @media (max-width: 768px) {
     .main {
@@ -235,3 +235,10 @@
     color: #28a745; 
     font-weight: bold;
 }
+
+.login-container{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 1rem;
+}
+

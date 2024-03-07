@@ -98,7 +98,14 @@
   padding: 5rem;
   margin-top: 50px;
 }
-.main .home-container .mbtn-2 {
+.main .line {
+  font-size: x-large;
+}
+.main p {
+  font-size: large;
+}
+
+.mbtn-2 {
   height: 50px;
   width: 25%;
   outline: none;
@@ -108,14 +115,8 @@
   border-radius: 50px;
   transition: all 0.4s;
 }
-.main .home-container .mbtn-2:hover {
+.mbtn-2:hover {
   background-color: green;
-}
-.main .line {
-  font-size: x-large;
-}
-.main p {
-  font-size: large;
 }
 
 /* Responsive Styles */
@@ -194,4 +195,10 @@
 .discounted-price {
   color: #28a745;
   font-weight: bold;
+}
+
+.login-container {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 1rem;
 }/*# sourceMappingURL=style.css.map */

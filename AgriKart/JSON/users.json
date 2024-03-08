@@ -1,14 +1,32 @@
 [
     {
         "username":"chinmaya",
-        "password":"chinmaya"
+        "password":"chinmaya",
+        "firstName": "Chinmaya",
+        "lastName": "Rao",
+        "email": "mchinmayarao@gmail.com",
+        "phone": 6363318828,
+        "address": "madku house",
+        "pinCode": 576111
     },
     {
         "username":"hency",
-        "password":"hency"
+        "password":"hency",
+        "firstName": "Hency",
+        "lastName": "D'souza",
+        "email": "hency@gmail.com",
+        "phone": 6363318829,
+        "address": "jantra house",
+        "pinCode": 576112
     },
     {
         "username":"shivraj",
-        "password":"shivraj"
+        "password":"shivraj",
+        "firstName": "Shivaraj",
+        "lastName": "Shetty",
+        "email": "shivaraj@gmail.com",
+        "phone": 6363318820,
+        "address": "ajekar house",
+        "pinCode": 576113
     }
 ]

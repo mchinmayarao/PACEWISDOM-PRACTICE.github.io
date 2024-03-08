@@ -24,14 +24,8 @@ var finalPrice = localStorage.getItem('finalPrice');
 console.log('Final Price from localStorage:', finalPrice);
 document.getElementById("FinalPrice").innerHTML = "₹ " + finalPrice;
 
-var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
 //console.log(currentUser);
-document.getElementById('firstName').value = currentUser.firstName;
-document.getElementById('lastName').value = currentUser.lastName;
-document.getElementById('email').value = currentUser.email;
-document.getElementById('phoneNumber').value = currentUser.phone;
-document.getElementById('address').value = currentUser.address;
-document.getElementById('zip').value = currentUser.pinCode;
+
 
 
 function validateForm() {

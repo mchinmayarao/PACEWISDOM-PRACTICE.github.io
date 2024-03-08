@@ -31,3 +31,14 @@ function login(event) {
         }
     });
 }
+
+function accountButton(){
+    var isLoggedIn = sessionStorage.getItem("isLoggedIn");
+    if(isLoggedIn == 'true'){
+        window.location.href = '../html/account.html';
+    }
+    else{
+        alert("Login Required");
+        window.location.href = '../html/login.html';
+    }
+}

@@ -152,6 +152,18 @@ if (finalPriceElement) {
     finalPriceElement.innerHTML = "₹ " + finalPrice;
 }
 
+
+function makePurchase(){
+    if(finalPrice == 0){
+        alert("Cart Is Empty. Add some item to cart first!");
+        window.location.href = '../html/allProducts.html';
+
+    }
+    else{
+        window.location.href = '../html/checkout.html';
+    }
+}
+
 // Store finalPrice in localStorage
 localStorage.setItem('finalPrice', finalPrice);
 

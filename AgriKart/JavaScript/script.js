@@ -55,16 +55,22 @@ switch (currentPageCategory) {
         break;
     case "cart":
         var isLoggedIn = sessionStorage.getItem("isLoggedIn");
-        if(isLoggedIn == 'false'){
+        if (isLoggedIn == 'false') {
             window.location.href = '../html/index.html';
         }
-        
+        break;
+
     case "checkout":
         var isLoggedIn = sessionStorage.getItem("isLoggedIn");
-        if(isLoggedIn == 'false'){
+        if (isLoggedIn == 'false') {
             window.location.href = '../html/index.html';
         }
-        
+        break;
+    case "account":
+        var isLoggedIn = sessionStorage.getItem("isLoggedIn");
+        if (isLoggedIn == 'false') {
+            window.location.href = '../html/index.html';
+        }
 }
 
 
@@ -86,7 +92,7 @@ function displayProducts(data) {
             '<p class="card-text"><strong>Discounted Price:</strong> ₹ <span class="discounted-price">' + discountedPrice.toFixed(2) + '</span></p>' +
             '<p class="card-text"><strong>Rating:</strong> <span class="badge bg-info">' + product.rating + '</span></p>' +
             '<p class="card-text"><strong>Seller:</strong> ' + product.seller + '</p>' +
-            '<div class="text-center ">'+
+            '<div class="text-center ">' +
             '<button class="btn btn-success addToCart" style="margin-bottom:10px;margin-top:10px" onclick="addToCart(\'' + product.name + '\',\'' + product.id + '\',\'' + product.imageSrc + '\',' + discountedPrice + ')">Add to Cart</button>' +
             '</div>' +
             '</div>' +

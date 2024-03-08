@@ -19,8 +19,7 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">AgriKart</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
-                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -43,9 +42,8 @@
                 <div class="justify-content-center">
                     <a href="cart.html" class="position-relative">
                         <span><i class="bi bi-bag-plus"></i></span>
-                        <span id="cartBadge"
-                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                            <span id="cartItemCount">2</span>
+                        <span id="cartBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            <span id="cartItemCount">0</span>
                         </span>
                     </a>
 
@@ -66,13 +64,97 @@
     <!-- --------------------------------------------- -->
 
 
-    <!-- main section containing a black rectangle with text in it. -->
-  <h1>account</h1>
+    <!-- main section  -->
+
+
+    <section style="background-color: #eee;">
+        <div class="container py-5">
+          
+      
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="card mb-4">
+                <div class="card-body text-center">
+                  <img src="https://www.kindpng.com/picc/m/298-2983638_indian-farmer-png-indian-farmer-cartoon-png-transparent.png" alt="avatar" class="rounded-circle img-fluid" style="width: 250px;">
+                  <h5 class="my-3 name" id="user_username">shivaraj</h5>
+                  <div class="d-flex justify-content-center mb-2">
+                    <button type="button" class="btn btn-success">Edit Profile</button>
+                    <button type="button" class="btn btn-outline-success ms-1" onclick="logOut()">Log Out</button>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            <div class="col-lg-8">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">First Name</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0" id="user_firstName">Shivaraj</p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Last Name</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0" id="user_lastName">Shetty</p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Email</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0" id="user_email">example@example.com</p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Phone</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0" id="user_phone">(097) 234-5678</p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Address</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0" id="user_address">Bay Area, San Francisco, CA</p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Pin Code</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0" id="user_pinCode">576111</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </section>
+
+
 
     <!-- footer section -->
     <footer class="bg-dark text-white text-center py-4">
         <div class="container">
-            <p>&copy; 2024 AgriKart. All rights reserved.</p>
+            <p>© 2024 AgriKart. All rights reserved.</p>
         </div>
     </footer>
 
@@ -82,6 +164,7 @@
     <script src="../JavaScript/script.js"></script>
     <script src="../JavaScript/script2.js"></script>
     <script src="../JavaScript/script3.js"></script>
+    <script src="../JavaScript/script4.js"></script>
 
 </body>
 

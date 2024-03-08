@@ -42,3 +42,22 @@ function accountButton(){
         window.location.href = '../html/login.html';
     }
 }
+
+var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+console.log(currentUser);
+
+
+document.getElementById('user_username').innerHTML = currentUser.username;
+document.getElementById('user_firstName').innerHTML = currentUser.firstName;
+document.getElementById('user_lastName').innerHTML = currentUser.lastName;
+document.getElementById('user_email').innerHTML = currentUser.email;
+document.getElementById('user_phone').innerHTML = currentUser.phone;
+document.getElementById('user_address').innerHTML = currentUser.address;
+document.getElementById('user_pinCode').innerHTML = currentUser.pinCode;
+
+function logOut(){
+    alert("Logged Out");
+    sessionStorage.setItem("isLoggedIn",'false');
+    sessionStorage.removeItem("currentUser");
+    window.location.href = '../html/index.html';
+}

@@ -53,8 +53,18 @@ switch (currentPageCategory) {
             displayProducts(data[2]["toolsAndEquipments"]);
         });
         break;
-
-
+    case "cart":
+        var isLoggedIn = sessionStorage.getItem("isLoggedIn");
+        if(isLoggedIn == 'false'){
+            window.location.href = '../html/index.html';
+        }
+        
+    case "checkout":
+        var isLoggedIn = sessionStorage.getItem("isLoggedIn");
+        if(isLoggedIn == 'false'){
+            window.location.href = '../html/index.html';
+        }
+        
 }
 
 

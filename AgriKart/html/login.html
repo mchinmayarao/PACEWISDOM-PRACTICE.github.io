@@ -64,16 +64,16 @@
                             Login
                         </div>
                         <div class="card-body">
-                            <form>
+                            <form onsubmit="login(event)">
                                 <div class="form-group">
                                     <label for="username">Username:</label>
                                     <input type="text" class="form-control" id="username"
-                                        placeholder="Enter your username">
+                                        placeholder="Enter your username" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Password:</label>
                                     <input type="password" class="form-control" id="password"
-                                        placeholder="Enter your password">
+                                        placeholder="Enter your password" required>
                                 </div>
                                 <div class="text-center py-4 "><button type="submit" class="mbtn-2">Login</button></div>
                             </form>
@@ -98,6 +98,7 @@
     <script src="../JavaScript/script.js"></script>
     <script src="../JavaScript/script2.js"></script>
     <script src="../JavaScript/script3.js"></script>
+    <script src="../JavaScript/script4.js"></script>
 
 </body>
 

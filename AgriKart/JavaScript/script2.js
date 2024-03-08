@@ -1,27 +1,41 @@
 
 function addToCart(productName, productId, productImageSrc, productPrice) {
-    var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
-    // Check if the product is already in the cart
-    var existingItem = cartItems.find(item => item.productId === productId);
 
-    if (existingItem) {
-        alert('Item ' + productName + ' is already in the cart!');
-    } else {
-        var cartItem = {
-            productName: productName,
-            productId: productId,
-            productImageSrc: productImageSrc,
-            productPrice: productPrice,
-            quantity: 1
-        };
+    var isLoggedIn = sessionStorage.getItem("isLoggedIn");
 
-        cartItems.push(cartItem);
-        localStorage.setItem('cartItems', JSON.stringify(cartItems));
-        alert('Added ' + productName + ' to the cart!');
-        location.reload();
+    if(isLoggedIn == "true"){
+        var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+        // Check if the product is already in the cart
+        var existingItem = cartItems.find(item => item.productId === productId);
+    
+        if (existingItem) {
+            alert('Item ' + productName + ' is already in the cart!');
+        } else {
+            var cartItem = {
+                productName: productName,
+                productId: productId,
+                productImageSrc: productImageSrc,
+                productPrice: productPrice,
+                quantity: 1
+            };
+    
+            cartItems.push(cartItem);
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            alert('Added ' + productName + ' to the cart!');
+            location.reload();
+        }
     }
+
+    else{
+        alert("Login Required !");
+        window.location.href = '../html/login.html';
+    }
+   
 }
+
+
 
 
 var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];

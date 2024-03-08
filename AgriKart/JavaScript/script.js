@@ -56,6 +56,7 @@ switch (currentPageCategory) {
     case "cart":
         var isLoggedIn = sessionStorage.getItem("isLoggedIn");
         if (isLoggedIn == 'false') {
+            alert('Login Required !');
             window.location.href = '../html/index.html';
         }
         break;

@@ -1,0 +1,50 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+@media screen and (min-width: 1024px)  {
+
+    .navbar-container{
+        justify-content: center;
+        display: flex;
+    }
+    .logo{
+        margin-right: 75px;
+    }
+}
+
+.main{
+    background: url(/images/background1.jpeg)no-repeat;
+    
+    background-size: cover;
+    background-position: center;
+    height: 40rem;
+    width: 100%;
+    
+}
+
+.hero-container{
+    margin-top: 100px; 
+    margin-bottom: 100px;
+}
+
+.hero-container-inner{
+    margin: auto; 
+    background-color: rgb(0, 58, 142, 0.6); 
+    text-align: center;
+}
+
+.hero-tittle{
+    font-weight: bold;
+    font-size: 3rem;
+}
+.hero-subtittle{
+    font-weight: 200;
+    font-size: 2.2rem;
+}
+
+.learn-more-btn{
+    background-color: #81bcba; 
+    border-radius: 0%; 
+    width: 200px; 
+}

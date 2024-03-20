@@ -17,6 +17,7 @@
     padding-bottom: 100px;
     color: #fff;
     position: relative;
+    overflow-x: hidden;
 
     .navbar {
         position: absolute;
@@ -359,6 +360,7 @@ hr {
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 235px;
+    overflow-x: hidden;
 }
 
 .footer-inner {
@@ -550,6 +552,7 @@ hr {
 
     .footer {
         padding-top: 20px;
+        overflow-x: hidden;
     }
 
     .footer-container {
@@ -620,7 +623,6 @@ hr {
         right: auto;
         position: relative;
         bottom: 0;
-        /* margin: auto; */
         margin: 0 25px;
         margin-bottom: 20px;
         max-width: none;

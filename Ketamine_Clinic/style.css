@@ -1,50 +1,89 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 
-@media screen and (min-width: 1024px)  {
+@media screen and (min-width: 1024px) {
 
-    .navbar-container{
+    .navbar-container {
         justify-content: center;
         display: flex;
     }
-    .logo{
+
+    .logo {
         margin-right: 75px;
     }
+
+
+    .ketamine-container {
+        display: flex;
+        height: 400px;
+    }
+
+    .ketamine-bg {
+        background-color: #f6fbfb;
+    }
+
+    .leaves-bg {
+        bottom: 35%;
+        left: 60%;
+        height: 350px;
+        background-image: url('./images/leaves2.jpeg');
+    }
+
+    .ketamine-content {
+        background-color: white;
+        padding: 10px;
+        bottom: 20%;
+        left: 100px;
+        height: fit-content;
+    }
+
+    .faq-link {
+        font-weight: 600;
+        color: #00317a;
+    }
+
+    .contact-info {
+        font-weight: 600;
+        color: #00317a;
+    }
+
+
 }
 
-.main{
+.main {
     background: url(./images/background1.jpeg)no-repeat;
-    
+
     background-size: cover;
     background-position: center;
-    height: 40rem;
+    height: 40%;
     width: 100%;
-    
+
 }
 
-.hero-container{
-    margin-top: 100px; 
+.hero-container {
+    margin-top: 100px;
     margin-bottom: 100px;
 }
 
-.hero-container-inner{
-    margin: auto; 
-    background-color: rgb(0, 58, 142, 0.6); 
+.hero-container-inner {
+    margin: auto;
+    background-color: rgb(0, 58, 142, 0.6);
     text-align: center;
+    width: 80%;
 }
 
-.hero-tittle{
+.hero-tittle {
     font-weight: bold;
-    font-size: 3rem;
-}
-.hero-subtittle{
-    font-weight: 200;
-    font-size: 2.2rem;
+    font-size: 300%;
 }
 
-.learn-more-btn{
-    background-color: #81bcba; 
-    border-radius: 0%; 
-    width: 200px; 
+.hero-subtittle {
+    font-weight: 200;
+    font-size: 300%;
+}
+
+.learn-more-btn {
+    background-color: #81bcba;
+    border-radius: 0%;
+    width: 200px;
 }

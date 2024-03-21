@@ -48,6 +48,13 @@
         color: #00317a;
     }
 
+    .leaves1{
+        background: url('./images/leaves1.png')no-repeat;
+        background-size: cover; 
+        height: 400px;
+
+    }
+
 
 }
 
@@ -87,4 +94,13 @@
     background-color: #81bcba;
     border-radius: 0%;
     width: 200px;
+}
+
+.section3{
+    background: url(./images/background2.jpeg)no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 40%;
+    width: 100%;
+
 }

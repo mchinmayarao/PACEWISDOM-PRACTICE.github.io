@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JSON</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+    <div class="container main">
+
+        <div class="container">
+            <h5 class="text-center display-1 p-3">Movie Ratings</h5>
+        </div>
+
+      <div class="container p-4">
+        <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th class="text-center p-4">S.No</th>
+                <th class="text-center p-4">Tittle</th>
+                <th class="text-center p-4">IMDB</th>
+                <th class="text-center p-4">Rotten&nbsp;Tomatoes</th>
+                <th class="text-center p-4">View</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- <tr class="text-center">
+                <th id="sno" scope="row">1</th>
+                <td id="tittle">Intolerance: Love's Struggle Throughout the Ages</td>
+                <td id="imdb"> 8</td>
+                <td id="rottenTomatoes">3.8</td>
+                <td id="View">The story of a poor young woman, separated by prejudice from her husband and baby, is interwoven with tales of intolerance from throughout history.</td>
+              </tr> -->
+
+              <!-- <tr class="text-center">
+                <th id="sno" scope="row"></th>
+                <td id="tittle"></td>
+                <td id="imdb"></td>
+                <td id="rottenTomatoes"></td>
+                <td id="View"></td>
+              </tr> -->
+
+
+             
+            </tbody>
+          </table>
+
+          <!-- <div class="container" >
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center pagination-lg" id="pagesContainer">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                  </li>
+                  
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li> 
+                
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+          </div> -->
+
+          <div class="container">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center pagination-lg" id="pagesContainer">
+                    <li class="page-item" id="previousPage">
+                        <button class="page-link btn btn-link" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </button>
+                    </li>
+        
+                    <div class="pageNum d-flex">
+                    <!-- <li class="page-item"><button class="page-link btn btn-link pageNumber" id="btn1">1</button></li>
+                    <li class="page-item"><button class="page-link btn btn-link pageNumber" id="btn2">2</button></li>
+                    <li class="page-item"><button class="page-link btn btn-link pageNumber" id="btn3">3</button></li> -->
+                    </div>
+        
+                    <li class="page-item" id="nextPage">
+                        <button class="page-link btn btn-link" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        
+      </div>
+
+      
+
+    </div>
+
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

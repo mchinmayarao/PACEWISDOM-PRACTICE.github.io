@@ -366,4 +366,14 @@
     .info-row{
         width: auto;
     }
+    .contact-section{
+        height: 75rem;
+    }
+    .contact-inner{
+        padding: 2rem;
+        width: auto;
+    }
+    .contact-form{
+        top: 0px;
+    }
 }

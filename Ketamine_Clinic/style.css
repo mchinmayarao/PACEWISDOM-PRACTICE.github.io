@@ -326,3 +326,44 @@
 
 }
 
+@media screen and (max-width: 768px) {
+
+    .main{
+        width: auto;
+    }
+    .hero{
+        width: auto;
+    }
+    .leaves2{
+        display: none;
+    }
+    .help{
+        position: static!important;
+
+    }
+    .help-green-box-bg{
+        display: none;
+    }
+    .help-content{
+        margin-top: auto;
+        position: static;
+        width: auto;
+        left: 0rem;
+        padding: 2rem;
+    }
+    .help-content-body{
+        padding: 0rem;
+    }
+    .help-content-footer{
+        padding: 1rem!important;
+    }
+    .leaves1{
+        display: none;
+    }
+    .info{
+        margin-top: 30rem;
+    }
+    .info-row{
+        width: auto;
+    }
+}

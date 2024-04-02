@@ -4,47 +4,40 @@ let currentPage = 1;
 let jsonData = [];
 let maxButtons = 5;
 
-// Fetch JSON data from the file
+
 fetch('movies.json')
     .then(response => response.json())
     .then(data => {
         jsonData = data;
-        displayData(currentPage);
-        renderPaginationButtons(currentPage);
+        displayData(currentPage,jsonData);
+        renderPaginationButtons();
     })
     .catch(error => console.error('Error fetching JSON:', error));
 
-function displayData(page) {
+function displayData(page, data) {
     const startIndex = (page - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
-    const pageData = jsonData.slice(startIndex, endIndex);
+    const pageData = data.slice(startIndex, endIndex);
 
     const container = $('.data-container');
     container.empty();
-    pageData.forEach(function (movie, i) {
+    pageData.forEach(function(movie, i) {
         var sno = i + 1;
         var title = movie.title;
         var imdbRating = movie.imdb.rating;
         var tomatoesRating = movie.tomatoes.viewer.rating;
         var plot = movie.plot;
-        
-        console.log("sno:", sno);
-        console.log("Title:", title);
-        console.log("IMDb Rating:", imdbRating);
-        console.log("Tomatoes Rating:", tomatoesRating);
-        console.log("Plot:", plot);
 
         var row = $('<tr class="text-center">' +
             '<th id="sno" scope="row">' + sno + '</th>' +
             '<td id="title">' + title + '</td>' +
             '<td id="imdb">' + imdbRating + '</td>' +
             '<td id="rottenTomatoes">' + tomatoesRating + '</td>' +
-            '<td id="rottenTomatoes">' + ((tomatoesRating+imdbRating)/2).toFixed(1) + '</td>' +
+            '<td id="rottenTomatoes">' + ((tomatoesRating + imdbRating) / 2).toFixed(1) + '</td>' +
             '<td id="View">' + plot + '</td>' +
-            '</tr>')
+            '</tr>');
 
         $('tbody').append(row);
-
     });
 }
 
@@ -65,7 +58,7 @@ function renderPaginationButtons() {
         }
         btn.find('.pageNumber').click(function() {
             currentPage = i;
-            displayData(currentPage);
+            displayData(currentPage,jsonData);
             renderPaginationButtons();
         });
         paginationContainer.append(btn);
@@ -75,7 +68,7 @@ function renderPaginationButtons() {
 $('#previousPage').click(function() {
     if (currentPage > 1) {
         currentPage--;
-        displayData(currentPage);
+        displayData(currentPage,jsonData);
         renderPaginationButtons();
     }
 });
@@ -89,3 +82,46 @@ $('#nextPage').click(function() {
     }
 });
 
+
+function applyFilter() {
+    const filterCriteria = $('#filter').val();
+    const filterRange = parseFloat($('#range').val());
+
+    const filteredData = jsonData.filter(movie => {
+        switch(filterCriteria){
+                        case 'combined':
+                            return ((movie.imdb.rating + movie.tomatoes.viewer.rating) / 2) >= filterRange;
+                        case 'imdb':
+                            return ((movie.imdb.rating >= filterRange));
+                        case 'rottenTomatoes':
+                            return ((movie.tomatoes.viewer.rating >= filterRange));
+                        
+                    }
+    });
+
+    displayData(currentPage, filteredData);
+}
+
+
+$('#applyFilter').click(function() {
+    applyFilter();
+});
+
+
+$('#range').on('input', function() {
+    $('#rangeValue').text($(this).val());
+});
+
+
+$('.sortByColumn').click(function() {
+    const column = $(this).data('column');
+    if (column === 'title') {
+        jsonData.sort((a, b) => a.title.localeCompare(b.title));
+    } else {
+        jsonData.sort((a, b) => a[column].rating - b[column].rating);
+    }
+    displayData(currentPage.jsonData);
+});
+
+
+applyFilter();

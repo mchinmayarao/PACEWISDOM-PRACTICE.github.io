@@ -8,6 +8,8 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
+
+
     <link rel="stylesheet" href="main.css">
     <title>Document</title>
 </head>
@@ -59,7 +61,7 @@
                         <ul class="hidden lg:flex space-x-7 text-slate-600 text-base uppercase font-semibold">
                             <li><a href="#home" class="hover:border-b-4 hover:border-green-500">Home</a></li>
                             <li><a href="#about" class="hover:border-b-4 hover:border-green-500">About</a></li>
-                            <li><a href="#" class="hover:border-b-4 hover:border-green-500">Services</a></li>
+                            <li><a href="#services" class="hover:border-b-4 hover:border-green-500">Services</a></li>
                             <li><a href="#" class="hover:border-b-4 hover:border-green-500">Resume</a></li>
                             <li><a href="#" class="hover:border-b-4 hover:border-green-500">Portfolio</a></li>
                             <li><a href="#" class="hover:border-b-4 hover:border-green-500">FAQ</a></li>
@@ -107,7 +109,7 @@
                         <hr>
                         <li><a href="#about" class="block hover:text-yellow-300">About</a></li>
                         <hr>
-                        <li><a href="#" class="block hover:text-yellow-300">Services</a></li>
+                        <li><a href="#services" class="block hover:text-yellow-300">Services</a></li>
                         <hr>
                         <li><a href="#" class="block hover:text-yellow-300">Resume</a></li>
                         <hr>
@@ -127,14 +129,15 @@
         </header>
 
         <div id="content">
+            <!-- about section -->
             <section id="about" class="p-24">
                 <div class="container flex flex-col justify-center items-center">
                     <p class="bg-green-400 h-fit w-fit text-center p-2 mb-4">About Me</p>
-                    <h1 class="text-5xl font-semibold mb-14">Know Me More</h1>
+                    <h1 class="text-5xl font-semibold mb-14 text-center">Know Me More</h1>
 
                     <div class="lg:grid lg:grid-cols-3 items-center">
                         <div class="lg:col-span-2 p-4">
-                            <h1 class="text-4xl mb-8 flex justify-center lg:justify-start">Hai I'm &nbsp;<span class="font-bold border-b-4 border-green-400 ">M Chinmaya Rao</span></h1>
+                            <h1 class="text-4xl mb-8 flex flex-col sm:flex-row justify-center lg:justify-start">Hai I'm &nbsp;<span class="font-bold border-b-4 border-green-400 ">Chinmaya</span></h1>
                             <p class="text-xl leading-10 text-justify">
                                 I'm highly motivated AI & Machine Learning Engineer with a passion for solving complex problems using innovative technologies. Skilled in developing machine learning algorithms, and Websites. Seeking a challenging role to contribute expertise and create a significant impact in the world of AI and ML.
                             </p>
@@ -144,12 +147,17 @@
                                 <span class=" text-slate-600 font-medium text-9xl">1</span>
                                 
                             </div>
-                            <h1 class="flex text-4xl font-medium mt-4">Year of&nbsp;<span class="font-bold">Experiance</span></h1>
+                            <div class="flex flex-col items-center sm:flex-row lg:flex-col xl:flex-row text-4xl font-medium mt-4">
+                                <span>Year of &nbsp;</span>
+                                 <span class="font-bold">Experiance</span>
+                            </div>
+
+                            <!-- <h1 class="flex text-4xl font-medium mt-4">Year of&nbsp;<span class="font-bold">Experiance</span></h1> -->
                         </div>
                     </div>
     
 
-                    <div class="grid grid-cols-2 lg:grid lg:grid-cols-4 items-center  gap-8 lg:gap-24 mt-12 ">
+                    <div class="grid grid-col-1  sm:grid-cols-2 lg:grid lg:grid-cols-4 items-center  gap-8 lg:gap-24 mt-12 ">
                         <div>
                             <p class="text-slate-500 font-medium">Name:</p>
                             <p class="font-semibold mt-2 text-lg">M Chinmaya Rao</p>
@@ -170,6 +178,48 @@
 
                 </div>
             </section>
+
+            <!-- services section -->
+            <section id="services" class="bg-slate-50">
+
+                <div class="container mx-auto flex flex-col justify-center items-center py-24 px-3 " >
+                    <p class="bg-green-400 h-fit w-fit text-center p-2 mb-4">What I do?</p>
+                    <h1 class="text-5xl font-semibold mb-14 text-center">How I can help in your next project</h1>
+
+                    <div class=" grid lg:grid-cols-3 gap-10">
+
+                        <div class="flex flex-col items-center p-2">
+                             <i class="fas fa-desktop text-7xl text-green-400 mb-5"></i>
+                             <h1 class="font-semibold mt-5 text-2xl">Web Design</h1>
+                             <p class="text-lg text-slate-400 leading-8 justify-center mt-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error sed alias aspernatur deserunt totam, delectus labore omnis adipisci quia voluptatibus neque quis rerum voluptates veritatis.</p>
+                        </div>
+                       
+
+
+                    
+                        <div class="flex mt-8 lg:mt-0 flex-col items-center p-2">
+                            <i class="fas fa-chart-area text-7xl text-green-400 mb-5"></i>
+                            <h1 class="font-semibold mt-5 text-2xl">Data Analyis</h1>
+                            <p class="text-lg text-slate-400 leading-8 justify-center mt-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid accusamus rem quo laborum assumenda officiis iusto aperiam culpa itaque cum, expedita facilis, architecto deserunt fuga!</p>
+                        </div>
+
+
+
+               
+                        <div class="flex  mt-8 lg:mt-0 flex-col items-center p-2">
+                            <i class="fas fa-brain text-7xl text-green-400 mb-5"></i>
+                            <h1 class="font-semibold mt-5 text-2xl">Machine Learning</h1>
+                            <p class="text-lg text-slate-400 leading-8 justify-center mt-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi soluta quam dolorum maxime aut nulla quibusdam. Dolorem repellat quo optio animi sint. Illo, quasi accusamus.</p>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+            </section>
+
         </div>
 
     </div>

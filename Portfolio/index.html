@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+
+<body class="font-sans">
+
+    <div id="main-wrapper">
+
+        <!-- home -->
+        <section id="home" class="bg-[url('./images/intro-bg-2.jpg')] bg-cover bg-center h-fit ">
+            <div class="bg-black/60  flex flex-col justify-center items-center h-screen ">
+
+                <div class="bg-white w-44 h-44 rounded-full flex justify-center items-center">
+                    <img src="./images/chinmaya.jpeg" class="w-36 h-36 rounded-full" alt="">
+                </div>
+
+                <div class="container  text-center  ">
+                    <h1 class="text-4xl  text-white mt-5 font-bold "> HELLO! I'M CHINMAYA RAO - AIML ENGINEER,
+                        <br>FULL-STACK DEVELOPER
+                    </h1>
+                    <h1 class=" text-2xl  text-slate-200 m-6 font-medium ">Based in Mangalore, Karnataka, India.</h1>
+
+                </div>
+
+                <div id="" class="bg-green-400 h-14 w-52 mt-4 text-center p-2">
+                    <a href="#about-me" class="text-2xl">About Me</a>
+                </div>
+
+            </div>
+
+
+
+        </section>
+
+        <!-- header nav bar -->
+        <header>
+            <nav class="bg-white">
+                <div class="max-w-7xl mx-auto px-4 py-2 h-20 flex justify-between items-center ">
+                    <!-- logo -->
+                    <div>
+                        <a href="#" class="text-black font-bold text-3xl mr-4">
+                            CHINMAYA
+                        </a>
+
+                    </div>
+                    <div class="flex items-center">
+
+                        <!-- Navigation Links -->
+                        <ul class="hidden lg:flex space-x-7 text-slate-600 text-base uppercase font-semibold">
+                            <li><a href="#" class="hover:border-b-4 hover:border-green-500">Home</a></li>
+                            <li><a href="#" class="hover:border-b-4 hover:border-green-500">About</a></li>
+                            <li><a href="#" class="hover:border-b-4 hover:border-green-500">Services</a></li>
+                            <li><a href="#" class="hover:border-b-4 hover:border-green-500">Resume</a></li>
+                            <li><a href="#" class="hover:border-b-4 hover:border-green-500">Portfolio</a></li>
+                            <li><a href="#" class="hover:border-b-4 hover:border-green-500">FAQ</a></li>
+                            <li><a href="#" class="hover:border-b-4 hover:border-green-500">Client</a></li>
+                            <li><a href="#" class="hover:border-b-4 hover:border-green-500">Contact</a></li>
+
+                            
+                        </ul>
+                    </div>
+
+                    <div class="hidden lg:flex items-center space-x-4 text-xl">
+                        <a href="#" class="text-black hover:text-gray-300"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-black hover:text-gray-300"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-black hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+                    </div>
+
+
+
+                    <!-- Hamburger Menu -->
+                    <div class="lg:hidden flex space-x-5">
+                        <button id="mobile-menu-toggle" class="text-black">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16m-7 6h7"></path>
+                            </svg>
+                        </button>
+
+                        <div class=" lg:flex items-center space-x-4 text-xl">
+                            <a href="#" class="text-black hover:text-gray-300"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="text-black hover:text-gray-300"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-black hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Links -->
+                   
+                </div>
+
+
+
+                <!-- Mobile Menu  -->
+                <div id="mobile-menu" class="lg:hidden hidden bg-white border-x-8">
+                    <ul class="py-2 px-4 space-y-2 text-slate-600 uppercase">
+                        <li><a href="#" class="block hover:text-yellow-300">Home</a></li>
+                        <hr>
+                        <li><a href="#" class="block hover:text-yellow-300">About</a></li>
+                        <hr>
+                        <li><a href="#" class="block hover:text-yellow-300">Services</a></li>
+                        <hr>
+                        <li><a href="#" class="block hover:text-yellow-300">Resume</a></li>
+                        <hr>
+                        <li><a href="#" class="block hover:text-yellow-300">Portfolio</a></li>
+                        <hr>
+                        <li><a href="#" class="block hover:text-yellow-300">FAQ</a></li>
+                        <hr>
+                        <li><a href="#" class="block hover:text-yellow-300">Client</a></li>
+                        <hr>
+                        <li><a href="#" class="block hover:text-yellow-300">Contact</a></li>
+
+                    </ul>
+                </div>
+            </nav>
+            <hr>
+
+        </header>
+
+    </div>
+
+</body>
+
+<script src="script.js"></script>
+
+</html>

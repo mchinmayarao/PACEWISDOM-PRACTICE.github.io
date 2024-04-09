@@ -345,13 +345,55 @@
 
             <!-- portfolio section -->
 
+
+            <div id="project-info" class="w-screen h-screen backdrop-blur-3xl fixed top-0 z-50 overflow-y-scroll hidden">
+                <div class="bg-white mx-auto md:my-10 py-8 px-7 relative max-w-lg lg:max-w-7xl">
+                    <i id="close-btn" class="fa-solid fa-xmark text-zinc-600 absolute top-2 right-4 text-2xl hover:text-zinc-300" aria-hidden="true" onclick="closeProjectDetails()"></i>
+                    <h1 id="project-title" class="font-bold text-xl text-center mb-5">Detailed Project 1</h1>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <img id="project-image" class="w-full md:max-w-[500px]" src="./images/agrikart.jpeg" alt="">
+                        </div>
+                        <div class="flex flex-col">
+                            <div id="project-info-inner" class="flex flex-col gap-4">
+                                <div>
+                                    <div class="font-semibold text-xl">Project Info:</div>
+                                    <div class="text-thin" id="project-desc">Quidam lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure. Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</div>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-xl mt-6" >Project Details:</div>
+                                    <p class="font-light my-4">
+                                        <span class="font-semibold">Type:</span>
+                                        <span id="project-type"></span>
+                                    </p>
+                                    <hr>
+                                    <p class="font-light my-4">
+                                        <span class="font-semibold">Technologies:</span>
+                                        <span id="project-tech"></span>
+                                    </p>
+                                    <hr>
+                                    <p class="font-light flex max-w-full overflow-hidden my-4">
+                                        <span class="font-semibold">URL:&nbsp;&nbsp;</span>
+                                        <a id="project-repo" class="truncate bg-green-400" href=""></a>
+                                        <i class="fa-solid fa-arrow-up-right-from-square mx-4" aria-hidden="true"></i>
+                                    </p>
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+
             <section id="portfolio" class="p-24 bg-slate-50">
                 <div class="container flex flex-col justify-center items-center">
                     <p class="bg-green-400 h-fit w-fit text-center p-2 mb-4">Portfolio</p>
                     <h1 class="text-5xl font-semibold mb-14 text-center">Some of My Projects</h1>
 
                     <div class=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-20">
-                        <div class="relative projects" id="project-1">
+                        <div class="relative projects" id="project-1" onclick="showProjectDetails(1)">
                             <img src="./images/agrikart.jpeg" class="h-96 w-full m-5 " alt="">
                             <div
                                 class="backdrop-blur-sm transition-all ease-in-out duration-500 h-96 w-full m-5 bg-black/50 top-0 opacity-0 hover:opacity-100 absolute flex flex-col text-center">
@@ -362,7 +404,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="relative projects" id="project-2">
+                        <div class="relative projects" id="project-2" onclick="showProjectDetails(2)">
                             <img src="./images/heart.jpeg" class="h-96 w-full m-5 " alt="">
                             <div
                                 class="backdrop-blur-sm transition-all ease-in-out duration-500 h-96 w-full m-5 bg-black/50 top-0 opacity-0 hover:opacity-100 absolute flex flex-col text-center">
@@ -373,7 +415,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="relative projects" id="project-3">
+                        <div class="relative projects" id="project-3" onclick="showProjectDetails(3)">
                             <img src="./images/malaria.jpeg" class="h-96 w-full m-5 " alt="">
                             <div
                                 class="backdrop-blur-sm transition-all ease-in-out duration-500 h-96 w-full m-5 bg-black/50 top-0 opacity-0 hover:opacity-100 absolute flex flex-col text-center">
@@ -384,7 +426,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="relative projects" id="project-4">
+                        <div class="relative projects" id="project-4" onclick="showProjectDetails(4)">
                             <img src="./images/lstm.jpeg" class="h-96 w-full m-5 " alt="">
                             <div
                                 class="backdrop-blur-sm transition-all ease-in-out duration-500 h-96 w-full m-5 bg-black/50 top-0 opacity-0 hover:opacity-100 absolute flex flex-col text-center">
@@ -395,7 +437,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="relative projects" id="project-5">
+                        <div class="relative projects" id="project-5" onclick="showProjectDetails(5)">
                             <img src="./images/metamind.jpeg" class="h-96 w-full m-5 " alt="">
                             <div
                                 class="backdrop-blur-sm transition-all ease-in-out duration-500 h-96 w-full m-5 bg-black/50 top-0 opacity-0 hover:opacity-100 absolute flex flex-col text-center">
@@ -406,7 +448,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="relative projects" id="project-6">
+                        <div class="relative projects" id="project-6" onclick="showProjectDetails(6)">
                             <img src="./images/sudoko.jpg" class="h-96 w-full m-5 " alt="">
                             <div
                                 class="backdrop-blur-sm transition-all ease-in-out duration-500 h-96 w-full m-5 bg-black/50 top-0 opacity-0 hover:opacity-100 absolute flex flex-col text-center">
@@ -428,16 +470,12 @@
 
                     </div>
 
-                    <div class="container m-8 bg-white h-screen w-screen flex flex-col">
-                        <button class="text-right"><i class="fa-regular fa-circle-xmark text-4xl"></i></button>
-                        <h1 class="font-semibold text-4xl text-center">AgriKart</h1>
-                        
-                    </div>
+
                 </div>
 
-                
 
-                
+
+
             </section>
 
             <!-- contact section -->

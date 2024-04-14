@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7a8c953e2a.js" crossorigin="anonymous"></script>
+
+
+
+    <link rel="stylesheet" href="main.css">
+    <title>Ketamine-Tailwindcss</title>
+</head>
+
+<body class="font-sans text-slate-900">
+
+    <div class="wrapper">
+
+        <header class="h-screen w-screen bg-[url('./images/background1.jpeg')] bg-cover bg-center flex flex-col">
+            <nav >
+                <div class="max-w-7xl mx-auto px-4 py-2 h-20 flex justify-between md:justify-center items-center ">
+                    <!-- logo -->
+                    <div>
+                        <img src="./images/logo.svg" class="h-10 md:mr-24 " alt="">
+
+                    </div>
+                    <div class="flex items-center">
+
+
+                        <ul class="hidden md:flex space-x-7 text-slate-600 text-sm uppercase items-center justify-center">
+                            <li><a href="#home" class="">Home</a></li>
+                            <li><a href="#about" class="">About Ketamine</a></li>
+                            <li><a href="#services" class="">About Us</a></li>
+                            <li><a href="#resume" class="">Patient Forms</a></li>
+                            <li><a href="#contact" class="">Contact us</a></li>
+
+
+                        </ul>
+                    </div>
+
+
+
+                    <!-- Hamburger Menu -->
+                    <div class="md:hidden flex space-x-5">
+                        <button id="mobile-menu-toggle" class="text-black">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16m-7 6h7"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+
+
+                </div>
+
+
+
+                <!-- Mobile Menu  -->
+                <div id="mobile-menu" class="md:hidden hidden bg-slate-300 bg-opacity-35">
+                    <ul class="py-2 px-4 space-y-2 text-slate-600 uppercase">
+                        <li><a href="#home" class="block hover:text-violet-950 hover:underline">Home</a></li>
+                        <hr>
+                        <li><a href="#about" class="block hover:text-violet-950 hover:underline">About Ketamine</a></li>
+                        <hr>
+                        <li><a href="#services" class="block hover:text-violet-950 hover:underline">About Us</a></li>
+                        <hr>
+                        <li><a href="#resume" class="block hover:text-violet-950 hover:underline">Patient forms</a></li>
+                        <hr>
+                        <li><a href="#contact" class="block hover:text-violet-950 hover:underline">Contact Us</a></li>
+
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="m-auto bg-blue-900 h-fit w-4/6 bg-opacity-75 flex flex-col items-center py-12 px-32">
+                <div class="items-center flex flex-col">
+                    <h1 class="text-slate-100 font-bold text-5xl text-center">KETAMINE CLINIC</h1>
+                    <h2 class="text-slate-100 font-thin text-4xl mt-2 text-center">OF PHILADEPHIA</h2>
+                </div>
+                <p class="w-32 h-1 bg-green-200 my-4"></p>
+                <div class="mx-10">
+                   <p class="text-slate-100 text-center"> Dr.Danish and Dr.Kelly specialize in the use of ketamine infusion for
+                depression,anxiety, PTSD, and
+                fibromyalgia.</p>
+                </div>
+            </div>
+
+        </header>
+
+
+    </div>
+
+
+
+</body>
+
+<script src="scriptTW.js"></script>
+
+</html>

@@ -9,90 +9,301 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/7a8c953e2a.js" crossorigin="anonymous"></script>
 
-
-
-    <link rel="stylesheet" href="main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7a8c953e2a.js" crossorigin="anonymous"></script>
     <title>Ketamine-Tailwindcss</title>
+    <style>
+        .bg-customGreen {
+            background-color: #81bcba;
+        }
+
+        .text-customGreen {
+            color: #81bcba;
+        }
+    </style>
 </head>
 
 <body class="font-sans text-slate-900">
 
-    <div class="wrapper">
-
-        <header class="h-screen w-screen bg-[url('./images/background1.jpeg')] bg-cover bg-center flex flex-col">
-            <nav >
-                <div class="max-w-7xl mx-auto px-4 py-2 h-20 flex justify-between md:justify-center items-center ">
-                    <!-- logo -->
-                    <div>
-                        <img src="./images/logo.svg" class="h-10 md:mr-24 " alt="">
-
-                    </div>
-                    <div class="flex items-center">
 
 
-                        <ul class="hidden md:flex space-x-7 text-slate-600 text-sm uppercase items-center justify-center">
-                            <li><a href="#home" class="">Home</a></li>
-                            <li><a href="#about" class="">About Ketamine</a></li>
-                            <li><a href="#services" class="">About Us</a></li>
-                            <li><a href="#resume" class="">Patient Forms</a></li>
-                            <li><a href="#contact" class="">Contact us</a></li>
-
-
-                        </ul>
-                    </div>
-
-
-
-                    <!-- Hamburger Menu -->
-                    <div class="md:hidden flex space-x-5">
-                        <button id="mobile-menu-toggle" class="text-black">
-                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M4 6h16M4 12h16m-7 6h7"></path>
-                            </svg>
-                        </button>
-                    </div>
-
-
+    <section class="h-fit w-screen bg-[url('./images/background1.jpeg')] bg-cover bg-center flex flex-col">
+        <nav>
+            <div class="max-w-7xl mx-auto px-4 py-2 h-20 flex justify-between md:justify-center items-center ">
+                <!-- logo -->
+                <div>
+                    <img src="./images/logo.svg" class="h-10 md:mr-24 " alt="">
 
                 </div>
+                <div class="flex items-center">
 
 
+                    <ul class="hidden md:flex space-x-7 text-slate-600 text-sm uppercase items-center justify-center">
+                        <li><a href="#home" class="">Home</a></li>
+                        <li><a href="#about" class="">About Ketamine</a></li>
+                        <li><a href="#services" class="">About Us</a></li>
+                        <li><a href="#resume" class="">Patient Forms</a></li>
+                        <li><a href="#contact" class="">Contact us</a></li>
 
-                <!-- Mobile Menu  -->
-                <div id="mobile-menu" class="md:hidden hidden bg-slate-300 bg-opacity-35">
-                    <ul class="py-2 px-4 space-y-2 text-slate-600 uppercase">
-                        <li><a href="#home" class="block hover:text-violet-950 hover:underline">Home</a></li>
-                        <hr>
-                        <li><a href="#about" class="block hover:text-violet-950 hover:underline">About Ketamine</a></li>
-                        <hr>
-                        <li><a href="#services" class="block hover:text-violet-950 hover:underline">About Us</a></li>
-                        <hr>
-                        <li><a href="#resume" class="block hover:text-violet-950 hover:underline">Patient forms</a></li>
-                        <hr>
-                        <li><a href="#contact" class="block hover:text-violet-950 hover:underline">Contact Us</a></li>
 
                     </ul>
                 </div>
-            </nav>
 
-            <div class="m-auto bg-blue-900 h-fit w-4/6 bg-opacity-75 flex flex-col items-center py-12 px-32">
-                <div class="items-center flex flex-col">
-                    <h1 class="text-slate-100 font-bold text-5xl text-center">KETAMINE CLINIC</h1>
-                    <h2 class="text-slate-100 font-thin text-4xl mt-2 text-center">OF PHILADEPHIA</h2>
+
+
+                <!-- Hamburger Menu -->
+                <div class="md:hidden flex space-x-5">
+                    <button id="mobile-menu-toggle" class="text-black">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
                 </div>
-                <p class="w-32 h-1 bg-green-200 my-4"></p>
-                <div class="mx-10">
-                   <p class="text-slate-100 text-center"> Dr.Danish and Dr.Kelly specialize in the use of ketamine infusion for
-                depression,anxiety, PTSD, and
-                fibromyalgia.</p>
-                </div>
+
+
+
             </div>
 
-        </header>
 
 
-    </div>
+            <!-- Mobile Menu  -->
+            <div id="mobile-menu" class="md:hidden hidden bg-slate-300 bg-opacity-35">
+                <ul class="py-2 px-4 space-y-2 text-slate-600 uppercase">
+                    <li><a href="#home" class="block hover:text-violet-950 hover:underline">Home</a></li>
+                    <hr>
+                    <li><a href="#about" class="block hover:text-violet-950 hover:underline">About Ketamine</a></li>
+                    <hr>
+                    <li><a href="#services" class="block hover:text-violet-950 hover:underline">About Us</a></li>
+                    <hr>
+                    <li><a href="#resume" class="block hover:text-violet-950 hover:underline">Patient forms</a></li>
+                    <hr>
+                    <li><a href="#contact" class="block hover:text-violet-950 hover:underline">Contact Us</a></li>
+
+                </ul>
+            </div>
+        </nav>
+
+        <!-- blue backgroud with hero texts  -->
+        <div class="mx-auto my-44 bg-blue-900 h-fit w-5/6 lg:w-4/6 bg-opacity-75 flex flex-col items-center py-12 px-32">
+            <div class="items-center flex flex-col">
+                <h1 class="text-slate-100 font-bold text-5xl text-center">KETAMINE CLINIC</h1>
+                <h2 class="text-slate-100 font-thin text-4xl mt-2 text-center">OF PHILADEPHIA</h2>
+            </div>
+            <p class="w-32 h-1 bg-customGreen my-4"></p>
+            <div class="mx-10">
+                <p class="text-slate-100 text-center"> Dr.Danish and Dr.Kelly specialize in the use of ketamine
+                    infusion for
+                    depression,anxiety, PTSD, and
+                    fibromyalgia.</p>
+            </div>
+            <div class="bg-customGreen text-white px-8 mt-8 text-center">LEARN MORE</div>
+        </div>
+
+
+
+    </section>
+
+    <section id="help" class="flex flex-col items-center w-screen h-fit relative">
+        <div class="bg-green-50 h-80 w-5/6 mt-32 relative ">
+
+        </div>
+
+        <div class="hidden lg:block absolute -top-24 right-36  z-10 ">
+            <img src="./images/leaves2.jpeg" class="w-5/6" alt="">
+        </div>
+
+        <div class="bg-white w-5/6 lg:w-3/5 p-6 lg:py-10  lg:ps-28 absolute z-20 mt-5  lg:left-60">
+            <div>
+                <h1 class="text-blue-900 text-2xl"> KETAMINE CLINIC <span class="font-thin">OF PHILADEPHIA CAN
+                        HELP.</span></h1>
+            </div>
+            <p class="w-32 h-1 bg-customGreen my-6"></p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 text-slate-500 ">
+                <div class=" font-thin text-sm mt-2">
+                    <p>Ketamine infusion is a fast and effective way to treat patients with
+                        depression, certain anxiety disorders, and PTSD symptoms that
+                        have failed previous treatment. It can be effective for those
+                        suffering from fibromyalgia. Ketamine infusion works quickly,
+                        effectively, and with few known side effects.</p>
+                    <p class="mt-6">Please look at our <span class="text-blue-900 font-normal">Frequently Asked
+                            Questions</span> for more information.</p>
+                </div>
+                <div class="me-20">
+                    <p class="text-blue-900">Contact us for more information and a free evaluation:</p>
+                    <p class="mt-4 text-sm font-light"><i
+                            class="fa-solid fa-phone text-customGreen"></i>&nbsp;&nbsp;&nbsp;215-388-1254</p>
+                    <p class="mt-4 text-sm font-light"><i
+                            class="fa-solid fa-envelope text-customGreen"></i>&nbsp;&nbsp;&nbsp;215-388-1254</p>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+
+
+    <section class="mt-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 w-5/6 lg:w-4/6 mx-auto">
+            <div class="bg-cover h-64 md:h-auto" style="background-image: url('./images/leaves1.png');"></div>
+            <div class="md:flex md:flex-col md:col-span-2">
+                <div class="grid grid-cols-1 md:grid-cols-2 ">
+                    <div class="bg-blue-900 text-white p-5">
+                        <p>Ketamine infusion can lead to rapid reduction in depressive symptoms within hours unlike traditional treatments, which can take months.</p>
+                    </div>
+                    <div class="bg-gray-300 p-5">
+                        <p>Ketamine can help as many as 80% of patients who have failed multiple other treatments for depression.</p>
+                        <p class="italic font-medium">Henderson TA, 2016</p>
+                    </div>
+                </div>
+                <div class="flex flex-col  p-3">
+                    <div class="flex justify-start mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-teal-400" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388q0-.527.062-1.054.093-.558.31-.992t.559-.683q.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612q0-.527.062-1.054.094-.558.31-.992.217-.434.559-.683.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 3 7.558V11a1 1 0 0 0 1 1z"/>
+                        </svg>
+                       
+                    </div>
+                    <div class="px-20">
+                        <p class="font-light text-center">Ketamine saved my life! I'm hanging out with friends again and feel like I have a whole new purpose!</p>
+                    <p class="text-center font-medium">30 year old female</p>
+                    </div>
+                    <div class="flex justify-end mt-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-teal-400 rotate-180" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388q0-.527.062-1.054.093-.558.31-.992t.559-.683q.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612q0-.527.062-1.054.094-.558.31-.992.217-.434.559-.683.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 3 7.558V11a1 1 0 0 0 1 1z"/>
+                        </svg>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section bg-cover bg-center bg-no-repeat pt-24 pb-16" style="background-image: url('./images/background2.jpeg')">
+        <div class="container w-4/6 mx-auto bg-blue-900 bg-opacity-50 px-20 pt-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 ">
+                <div class="contact-left ">
+                    <div class="col-span-1">
+                        <h3 class="text-white text-2xl font-semibold mb-4">Is ketamine Safe?</h3>
+                        <p class="text-white mb-4">Ketamine infusion for depression has, thus far, been found to be extremely safe and without significant side effects. It is used at doses lower than what are used for anesthesia. <span class="contact-arrow text-teal-400 font-semibold">&gt;</span></p>
+                        <div class="rectangle my-3 lg:my-4"></div>
+                        <h3 class="text-white text-2xl font-semibold mb-4">Is ketamine for me?</h3>
+                        <p class="text-white mb-4">You may be a candidate for ketamine infusion if you suffer from depression, certain anxiety disorders, Posttraumatic Stress Disorder (PTSD), or fibromyalgia that has not responded to other treatments. <span class="contact-arrow text-teal-400 font-semibold">&gt;</span></p>
+                        <div class="rectangle my-3 lg:my-4"></div>
+                        <h3 class="text-white text-2xl font-semibold mb-4">How does the whole process work?</h3>
+                        <p class="text-white mb-4">We have created an easy yet thorough process to ensure that you are a good fit for ketamine infusion. Please visit <a href="#" class="link text-teal-400">this page</a> for the overview of the process. <span class="contact-arrow text-teal-400 font-semibold">&gt;</span></p>
+                    </div>
+                </div>
+                <div class="col-span-1">
+                    <div class="contact-form bg-white relative z-5 p-6 lg:p-8 text-gray-600 ">
+                        <div class="contact-heading text-center uppercase font-bold mb-4 text-blue-900">Contact Us Now:</div>
+                        <input type="text" class="w-full px-4 py-2 my-2 contact-input-field border-2 border-gray" placeholder="Name">
+                        <input type="text" class="w-full px-4 py-2 my-2 contact-input-field border-2 border-gray" placeholder="Phone">
+                        <p class="my-2">Is it okay for our staff to call you and leave a voicemail with information pertaining to your condition and our treatment?</p>
+                        <div class="flex my-2">
+                            <div class="form-check me-3">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                        <input type="text" class="w-full px-4 py-2 my-2 contact-input-field border-2 border-gray" placeholder="Email">
+                        <p class="my-2">Is it okay for our staff to call you and leave a voicemail with information pertaining to your condition and our treatment?</p>
+                        <div class="flex my-2">
+                            <div class="form-check me-3">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault11">
+                                <label class="form-check-label" for="flexRadioDefault11">
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault12">
+                                <label class="form-check-label" for="flexRadioDefault12">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                        <textarea class="w-full px-4 py-2 my-2 border-2 border-gray" placeholder="Message" rows="5"></textarea>
+                        <button type="button" class="btn btn-info submit-btn mx-auto mt-3 py-2 text-white bg-customGreen px-8 block">SUBMIT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="about-section bg-gray-100 py-12">
+        <div class="container mx-auto w-4/6">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-semibold text-blue-900 mb-6">Who We Are:</h1>
+            <p class="w-32 h-1 bg-customGreen my-4"></p>
+            <p class="text-sm text-gray-600 md:w-3/4 lg:w-2/3 mb-8 md:mb-10">We are a group of doctors, therapists, and nurses who are so excited to bring such an effective treatment to patients who have been waiting for something to work. We have all had significant experience working in the mental health field so we know how ineffective older treatments can be for some patients. Please click on our personal profiles below to learn a little about each of our backgrounds.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+                <div class="flex flex-col items-center">
+                    <img class="about-img object-cover rounded-full w-48 h-48 mb-4" src="./images/david.png" alt="">
+                    <h4 class="text-xl md:text-2xl  text-center mb-2 text-blue-900">David Danish, MD</h4>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img class="about-img object-cover rounded-full w-48 h-48 mb-4" src="./images/peter.png" alt="">
+                    <h4 class="text-xl md:text-2xl  text-center mb-2 text-blue-900">Dr. Peter Kelly</h4>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img class="about-img object-cover rounded-full w-48 h-48 mb-4" src="./images/anna.png" alt="">
+                    <h4 class="text-xl md:text-2xl  text-center mb-2 text-blue-900">Anna Ruggirello</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer-section bg-blue-900 text-white py-8">
+        <div class="container mx-auto px-4 lg:px-0 w-4/6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Navigation -->
+                <div class="">
+                    <h4 class="text-xl font-semibold mb-4">Navigation</h4>
+                    <ul class="footer-list">
+                        <li class="my-2"><a href="#" class="hover:text-gray-300">Home</a></li>
+                        <li class="my-2"><a href="#" class="hover:text-gray-300">About Ketamine</a></li>
+                        <li class="my-2"><a href="#" class="hover:text-gray-300">About Us</a></li>
+                        <li class="my-2"><a href="#" class="hover:text-gray-300">Patient Forms</a></li>
+                        <li class="my-2"><a href="#" class="hover:text-gray-300">Contact Us</a></li>
+                    </ul>
+                </div>
+                <!-- Contacts -->
+                <div class="">
+                    <h4 class="text-xl font-semibold mb-4">Contacts</h4>
+                    <ul class="footer-list">
+                        <li class="my-2 flex items-center"><i class="fa-solid fa-phone me-4 text-customGreen"></i>215-588-2160</li>
+                        <li class="my-2 flex items-center"><i class="fa-solid fa-envelope me-4 text-customGreen"></i>info@kcofp.com</li>
+                        <li class="my-2 flex items-center"><i class="fa-solid fa-location-dot me-4 text-customGreen"></i>111 Forest Ave, 2nd Floor<br>Narberth, PA 12072</li>
+                    </ul>
+                </div>
+                <!-- Social Links and Logo -->
+                <div class="md:text-center">
+                    <div class="footer-icon-container mb-4">
+                        <i class="fa-brands fa-twitter text-3xl mx-5 text-customGreen"></i>
+                        <i class="fa-brands fa-facebook text-3xl mx-5 text-customGreen"></i>
+                        <i class="fa-brands fa-linkedin text-3xl mx-5 text-customGreen"></i>
+                    </div>
+                    <img class="footer-logo mx-auto mb-2 lg:mb-0" src="./images/logo.svg" alt="">
+                    <p class="text-xs">2016 Copyright. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+
+
+
 
 
 

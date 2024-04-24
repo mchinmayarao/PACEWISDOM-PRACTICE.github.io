@@ -1,0 +1,29 @@
+body {
+    margin-top: 1em;
+    font-size: 2em;
+    
+    
+  }
+  .calculator {
+    padding: 0;
+    width: 300px;
+    box-shadow: 0px 3px 10px 3px #aaa;
+    border-right: 0.01em solid #333;
+    border-bottom: 0.01em solid #333;
+  }
+  .result {
+    background-color: #000;
+    min-height: 2em;
+    color: white;
+  }
+  .result-input {
+    background-color: transparent;
+    color: white;
+    border: none;
+    outline: none;
+    width: 100%;
+    text-align: right;
+    padding: 0 1em;
+    font-size: 1em;
+  }
+

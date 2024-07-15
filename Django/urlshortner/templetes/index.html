@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+    <div class="card-center d-flex align-items-center justify-content-center" style="height: 100vh;">
+        <div class="card text-center" style="width: 30rem;">
+            <div class="card-header">
+                <h5 class="card-title">URL Shortener</h5>
+            </div>
+
+            <div class="card-body">
+                <p class="card-text">Enter the URL you want to shorten below:</p>
+                
+                <form id="post-form" action="create" method="post">
+
+                    {% csrf_token %}
+
+                    <input type="text" id="link" class="form-control" name="link" placeholder="Enter URL">
+                    <br>
+                    <button type="submit" id="shortenBtn" class="btn btn-primary">Shorten URL</button>
+                    <br><br>
+                </form>
+                
+                <div id="shortenedUrl" class="text-muted">{{ uid }}</div>
+            </div>
+
+        </div>
+    </div>
+
+ 
+
+</body>
+    <!-- <script type="'text/javascript">
+        $(document).on('submit' , '#post-form',function(e){
+            e.preventDefault();
+
+            $.ajax({
+                type:'POST',
+                url :'/create',
+                data:{
+                    link:$('#link').val(),
+                    csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+                },
+                success:function(){
+    
+                }
+            });
+        });
+    </script> -->
+</html>

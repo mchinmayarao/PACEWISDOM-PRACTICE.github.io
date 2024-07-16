@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Dictionary</title>
+  </head>
+  <body>
+
+    <div class="container shadow min-vh-100 py-4 al">
+        
+        <div class="row m-4">
+            <div class="col-md-5 mx-auto ">
+                <h1 class="text-center">English Dictionary</h1>
+                <br>
+                <div class="container">
+                    <form action="search" method='post' >
+                        {% csrf_token %}
+                        <input class="form-control-lg w-100 border rounded-pill" name="word" type="search" placeholder="search" id="search-input">
+                    </form>
+                   
+                </div>
+            </div>
+        </div>
+
+        <div class="card border-dark mb-3 mx-auto" style="max-width: 35rem;">
+            <div class="card-header"><h2>{{ word }}</h2></div>
+            <div class="card-body text-dark">
+
+                {% comment %} if the meaning resopose is empty it means that no meaning for the word was found {% endcomment %}
+                
+                {% if  meaning.items%}
+                    <h5 class="card-title">Meaning</h5>
+                    <div class="container">
+                        {% for key,values in meaning.items %}
+                            <h6>{{ key }}</h6>
+                            <p>
+                                {% for val in values %}
+                                    <li> {{val}} </li>
+                                {% endfor %}
+                            </p>
+                        {% endfor %}
+                        </div>
+                    </div>
+                {% else %}
+                    <h5 class="card-title">Sorry! No meaning found.</h5>
+                    
+                
+                {% endif %}
+            
+        </div>
+    </div>
+
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+   
+  </body>
+</html>

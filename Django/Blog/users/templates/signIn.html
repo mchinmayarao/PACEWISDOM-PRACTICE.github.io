@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>SignIn</h1>
+    
+
+    <form class="form-with-validation" action="/users/signIn/" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button  class="form-submit" style = "margin-top:2rem">Submit</button>
+    </form>
+</body>
+</html>

@@ -30,10 +30,10 @@ class DrinksView(APIView):
             if Drinks.objects.filter(name=serializer.validated_data['name']).exists():
 
             
-                return Response({"response":'item already present'},status=status.HTTP_200_OK)
+                return Response({"response":'item already present'},status=status.HTTP_409_CONFLICT)
             else:
                 serializer.save()
-                return Response({"response":'item added'},status=status.HTTP_200_OK)
+                return Response({"response":'item added','data':serializer.data},status=status.HTTP_201_CREATED)
 
             
 

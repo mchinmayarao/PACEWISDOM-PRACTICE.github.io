@@ -20,5 +20,6 @@ from django.urls import path
 from . import views
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('drinks',views.DrinksView.as_view())
+    path('drinks',views.DrinksView.as_view()),
+    path('drinks/<int:id>',views.SingleDrinkView.as_view())
 ]

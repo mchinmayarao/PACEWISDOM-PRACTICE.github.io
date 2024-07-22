@@ -1,14 +1,14 @@
 from typing import Any
 from django.http import JsonResponse
 from .models import Drinks
-from .serializers import DrinksSerializer
+from .serializers import DrinksSerializer,UserSerializer
 from django.views import View
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.viewsets import ModelViewSet
 
-
+from django.contrib.auth.models import User
 
 
 # class DrinksView(APIView):
@@ -82,3 +82,7 @@ from rest_framework.viewsets import ModelViewSet
 class DrinksViewSet(ModelViewSet):
     queryset = Drinks.objects.all()
     serializer_class = DrinksSerializer
+    
+class UsersViewSet(ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer

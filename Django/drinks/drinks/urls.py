@@ -22,7 +22,7 @@ from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 router.register(r'drinks', views.DrinksViewSet)
-
+router.register(r'users', views.UsersViewSet)
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', include(router.urls)),

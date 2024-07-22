@@ -80,10 +80,22 @@ from rest_framework import status,permissions
 class DrinksViewSet(ModelViewSet):
     queryset = Drinks.objects.all()
     serializer_class = DrinksSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
 class UsersViewSet(ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
+    def get_permissions(self):
+        if self.request.method == 'GET':
+            permission_classes = [permissions.IsAdminUser]  
+        elif self.request.method == 'POST':
+            permission_classes = [permissions.AllowAny]  
+        elif self.request.method == 'DELETE' or self.request.method == 'PUT':
+            permission_classes = [permissions.IsAuthenticated]  
+        
+
+        return [permission() for permission in permission_classes]
 
 class LoginView(APIView):
     permission_classes = [permissions.AllowAny]
@@ -101,3 +113,7 @@ class LogoutView(APIView):
         logout(request)
         return Response({"message":"logout succesfull"},status=status.HTTP_200_OK)
 
+# class Current(APIView):
+#     def get(self,request):
+#         print(request.user)
+#         return Response(status=status.HTTP_200_OK)

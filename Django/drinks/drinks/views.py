@@ -1,15 +1,13 @@
-from typing import Any
-from django.http import JsonResponse
 from .models import Drinks
 from .serializers import DrinksSerializer,UserSerializer
-from django.views import View
 from rest_framework.response import Response
-from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.viewsets import ModelViewSet
 
 from django.contrib.auth.models import User
-
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import login,logout
+from rest_framework import status,permissions
 
 # class DrinksView(APIView):
 
@@ -82,7 +80,24 @@ from django.contrib.auth.models import User
 class DrinksViewSet(ModelViewSet):
     queryset = Drinks.objects.all()
     serializer_class = DrinksSerializer
-    
+
 class UsersViewSet(ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
+class LoginView(APIView):
+    permission_classes = [permissions.AllowAny]
+    def post(self,request,*args, **kwargs):
+        form = AuthenticationForm(data=request.data)
+        if form.is_valid():
+            login(request,form.get_user())
+            return Response({"message":"Login succesfull"},status=status.HTTP_200_OK)
+        return Response({"errors":form.errors},status=status.HTTP_400_BAD_REQUEST)
+
+
+class LogoutView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+    def post(self,request,*args, **kwargs):
+        logout(request)
+        return Response({"message":"logout succesfull"},status=status.HTTP_200_OK)
+

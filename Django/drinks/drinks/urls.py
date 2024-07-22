@@ -26,4 +26,6 @@ router.register(r'users', views.UsersViewSet)
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', include(router.urls)),
+    path('login',views.LoginView.as_view()),
+    path('logout',views.LogoutView.as_view())
 ]

@@ -80,7 +80,7 @@ from rest_framework import status,permissions
 class DrinksViewSet(ModelViewSet):
     queryset = Drinks.objects.all()
     serializer_class = DrinksSerializer
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    permission_classes = [permissions.DjangoModelPermissions]
 
 class UsersViewSet(ModelViewSet):
     queryset = User.objects.all()
@@ -113,7 +113,7 @@ class LogoutView(APIView):
         logout(request)
         return Response({"message":"logout succesfull"},status=status.HTTP_200_OK)
 
-# class Current(APIView):
-#     def get(self,request):
-#         print(request.user)
-#         return Response(status=status.HTTP_200_OK)
+class Current(APIView):
+    def get(self,request):
+        print(request.user)
+        return Response({"user":str(request.user)},status=status.HTTP_200_OK)

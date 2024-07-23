@@ -3,12 +3,12 @@ from .serializers import DrinksSerializer,UserSerializer
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.viewsets import ModelViewSet
-
-from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import login,logout
+from django.contrib.auth.models import User
+from django.contrib.auth import login,logout,authenticate
 from rest_framework import status,permissions
-
+from rest_framework.authentication import TokenAuthentication,SessionAuthentication,BasicAuthentication
+from rest_framework.authtoken.models import Token
 # class DrinksView(APIView):
 
 #     def get(self, request, *args, **kwargs):
@@ -78,11 +78,16 @@ from rest_framework import status,permissions
     
 
 class DrinksViewSet(ModelViewSet):
+    # viewset for CRUD operations on drinks. users can only view the drinks
+
     queryset = Drinks.objects.all()
     serializer_class = DrinksSerializer
+    authentication_classes = [TokenAuthentication]
     permission_classes = [permissions.DjangoModelPermissions]
 
+
 class UsersViewSet(ModelViewSet):
+    # viewset for CRUD operations on users. Only admin can view all users.
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
@@ -100,20 +105,25 @@ class UsersViewSet(ModelViewSet):
 class LoginView(APIView):
     permission_classes = [permissions.AllowAny]
     def post(self,request,*args, **kwargs):
-        form = AuthenticationForm(data=request.data)
-        if form.is_valid():
-            login(request,form.get_user())
-            return Response({"message":"Login succesfull"},status=status.HTTP_200_OK)
-        return Response({"errors":form.errors},status=status.HTTP_400_BAD_REQUEST)
+        user = authenticate(username=request.data['username'], password=request.data['password'])
+        if user:
+            
+            token, created = Token.objects.get_or_create(user=user)
+            login(request,user)
+            
+            return Response({'token': token.key,"message":"login successfull"})
+        else:
+            return Response({'error': 'Invalid credentials'}, status=401)
 
 
 class LogoutView(APIView):
     permission_classes = [permissions.IsAuthenticated]
     def post(self,request,*args, **kwargs):
         logout(request)
-        return Response({"message":"logout succesfull"},status=status.HTTP_200_OK)
+        return Response({"message":"logout successfull"},status=status.HTTP_200_OK)
 
 class Current(APIView):
+    # View for getting the current user logged in
     def get(self,request):
         print(request.user)
         return Response({"user":str(request.user)},status=status.HTTP_200_OK)

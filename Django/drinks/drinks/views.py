@@ -9,6 +9,7 @@ from django.contrib.auth import login,logout,authenticate
 from rest_framework import status,permissions
 from rest_framework.authentication import TokenAuthentication,SessionAuthentication,BasicAuthentication
 from rest_framework.authtoken.models import Token
+from rest_framework_simplejwt.authentication import JWTAuthentication
 # class DrinksView(APIView):
 
 #     def get(self, request, *args, **kwargs):
@@ -82,7 +83,7 @@ class DrinksViewSet(ModelViewSet):
 
     queryset = Drinks.objects.all()
     serializer_class = DrinksSerializer
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = [JWTAuthentication]
     permission_classes = [permissions.DjangoModelPermissions]
 
 

@@ -1,4 +1,4 @@
-from .models import Drinks
+from .models import Drinks,CustomUser
 from .serializers import DrinksSerializer,UserSerializer
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -89,7 +89,7 @@ class DrinksViewSet(ModelViewSet):
 
 class UsersViewSet(ModelViewSet):
     # viewset for CRUD operations on users. Only admin can view all users.
-    queryset = User.objects.all()
+    queryset = CustomUser.objects.all()
     serializer_class = UserSerializer
 
     def get_permissions(self):
@@ -106,13 +106,13 @@ class UsersViewSet(ModelViewSet):
 class LoginView(APIView):
     permission_classes = [permissions.AllowAny]
     def post(self,request,*args, **kwargs):
-        user = authenticate(username=request.data['username'], password=request.data['password'])
+        user = authenticate(email=request.data['email'], password=request.data['password'])
         if user:
             
-            token, created = Token.objects.get_or_create(user=user)
+            # token, created = Token.objects.get_or_create(user=user)
             login(request,user)
             
-            return Response({'token': token.key,"message":"login successfull"})
+            return Response({"message":"login successfull"})
         else:
             return Response({'error': 'Invalid credentials'}, status=401)
 

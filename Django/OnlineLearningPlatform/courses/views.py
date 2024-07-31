@@ -26,10 +26,10 @@ class ContentListCreateView(generics.ListCreateAPIView):
     permission_classes = [permissions.IsAuthenticated, IsTeacherOrReadOnly]
     lookup_field = 'name'
 
-    def get_queryset(self):
-        name = self.kwargs['name']
-        course_id = Course.objects.get(name=name).course_id
-        return Content.objects.filter(course=course_id)
+    def list(self, request, *args, **kwargs): 
+        course = Course.objects.get(name=kwargs['name'])
+        contents = [content.title for content in course.content_set.all()]
+        return Response({'contents':contents})
 
     def perform_create(self, serializer):
         name = self.kwargs['name']

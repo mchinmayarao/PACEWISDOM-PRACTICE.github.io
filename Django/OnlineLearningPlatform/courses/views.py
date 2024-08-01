@@ -8,12 +8,14 @@ from .serializers import CourseSerializer, ContentSerializer,CourseCreateSeriali
 from users.permissions import IsTeacherOrReadOnly,IsOwnerOrReadOnly,IsOwner
 from .permissions import IsEnrolledOrTeacher
 from rest_framework import status
-
+from rest_framework import filters
 
 class CourseListCreateView(generics.ListCreateAPIView):
     queryset = Course.objects.all()
     serializer_class = CourseCreateSerializer
     permission_classes = [IsTeacherOrReadOnly,]
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['name',]
 
     def perform_create(self, serializer):
         serializer.save(teacher = self.request.user)

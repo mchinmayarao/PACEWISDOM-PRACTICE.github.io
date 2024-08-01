@@ -24,3 +24,10 @@ class Content(models.Model):
     added_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     course = models.ForeignKey("Course",on_delete=models.CASCADE)
+
+class Enrollment(models.Model):
+    enrolled_at = models.DateTimeField(auto_now_add=False)
+    student= models.ForeignKey("users.User",on_delete=models.CASCADE)
+    course = models.ForeignKey("courses.Course", on_delete=models.CASCADE)
+
+    

@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from .models import Course, Content
 from .serializers import CourseSerializer, ContentSerializer,CourseCreateSerializer,ContentCreateSerializer
 from users.permissions import IsTeacherOrReadOnly,IsOwnerOrReadOnly
+from .permissions import IsEnrolledOrTeacher
 
 class CourseListCreateView(generics.ListCreateAPIView):
     queryset = Course.objects.all()
@@ -23,7 +24,17 @@ class CourseDetailView(generics.RetrieveUpdateDestroyAPIView):
 
 class ContentListCreateView(generics.ListCreateAPIView):
     serializer_class = ContentCreateSerializer
-    permission_classes = [permissions.IsAuthenticated, IsTeacherOrReadOnly]
+    
+    def get_permissions(self):
+        print("inside get_permisssions")
+        if self.request.method in permissions.SAFE_METHODS:
+            print("inside if")
+            self.permission_classes = [permissions.IsAuthenticated, IsEnrolledOrTeacher,]
+            
+        else:
+            self.permission_classes = [permissions.IsAuthenticated, IsOwnerOrReadOnly,]
+        return super(ContentListCreateView, self).get_permissions()
+    
     lookup_field = 'name'
 
     def list(self, request, *args, **kwargs): 
@@ -39,8 +50,16 @@ class ContentListCreateView(generics.ListCreateAPIView):
 class ContentDetailView(generics.RetrieveUpdateDestroyAPIView):
     
     serializer_class = ContentSerializer
-    permission_classes = [permissions.IsAuthenticated, IsOwnerOrReadOnly]
 
+    def get_permissions(self):
+        if self.request.method in permissions.SAFE_METHODS:
+            self.permission_classes = [permissions.IsAuthenticated, IsEnrolledOrTeacher,]
+            
+        else:
+            self.permission_classes = [permissions.IsAuthenticated, IsOwnerOrReadOnly,]
+        return super(ContentDetailView, self).get_permissions()
+    
+    lookup_field = 'title'
     def get_queryset(self):
         name = self.kwargs['name']
         course_id = Course.objects.get(name=name).course_id

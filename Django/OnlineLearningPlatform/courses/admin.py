@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Content,Course
+from .models import Content,Course,Enrollment
 # Register your models here.
 # admin.site.register(Content)
 # admin.site.register(Course)
@@ -19,3 +19,4 @@ class ContentAdmin(admin.ModelAdmin):
 
 admin.site.register(Course, CourseAdmin)
 admin.site.register(Content, ContentAdmin)
+admin.site.register(Enrollment)

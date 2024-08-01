@@ -23,3 +23,13 @@ class IsOwnerOrReadOnly(BasePermission):
         if type(obj) == Course:
             return obj.teacher == request.user
         return obj.course.teacher == request.user
+
+class IsOwner(BasePermission):
+    def has_permission(self, request, view):
+        course_name = view.kwargs.get('name')
+        try:
+            course = Course.objects.get(name=course_name)
+        except Course.DoesNotExist:
+            return False
+        
+        return course.teacher == request.user

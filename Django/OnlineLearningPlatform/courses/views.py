@@ -3,10 +3,12 @@ from django.shortcuts import render
 # Create your views here.
 from rest_framework import generics, permissions, status
 from rest_framework.response import Response
-from .models import Course, Content
+from .models import Course, Content,Enrollment
 from .serializers import CourseSerializer, ContentSerializer,CourseCreateSerializer,ContentCreateSerializer
-from users.permissions import IsTeacherOrReadOnly,IsOwnerOrReadOnly
+from users.permissions import IsTeacherOrReadOnly,IsOwnerOrReadOnly,IsOwner
 from .permissions import IsEnrolledOrTeacher
+from rest_framework import status
+
 
 class CourseListCreateView(generics.ListCreateAPIView):
     queryset = Course.objects.all()
@@ -64,3 +66,12 @@ class ContentDetailView(generics.RetrieveUpdateDestroyAPIView):
         name = self.kwargs['name']
         course_id = Course.objects.get(name=name).course_id
         return Content.objects.filter(course=course_id)
+    
+class SubscribersListView(generics.ListAPIView):
+        permission_classes = [permissions.IsAuthenticated,IsOwner,]
+        def get(self, request, *args, **kwargs):
+            course_name = kwargs.get('name')
+            course = Course.objects.get(name=course_name)
+            enrollment = Enrollment.objects.filter(course = course)
+            subscribers = [{"name":user.student.name,"email":user.student.email} for user in enrollment]
+            return Response({"subscribers":subscribers},status=status.HTTP_200_OK)

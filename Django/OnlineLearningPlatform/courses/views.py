@@ -30,9 +30,7 @@ class ContentListCreateView(generics.ListCreateAPIView):
     serializer_class = ContentCreateSerializer
     
     def get_permissions(self):
-        print("inside get_permisssions")
         if self.request.method in permissions.SAFE_METHODS:
-            print("inside if")
             self.permission_classes = [permissions.IsAuthenticated, IsEnrolledOrTeacher,]
             
         else:

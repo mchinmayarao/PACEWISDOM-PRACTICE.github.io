@@ -143,7 +143,7 @@ REST_FRAMEWORK = {
 }
 # Configure the JWT settings
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=55),
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': True,
@@ -157,3 +157,10 @@ SIMPLE_JWT = {
 }
 
 AUTH_USER_MODEL = 'users.User'
+DEFAULT_FROM_EMAIL = 'mchinmayarao@gmail.com'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'mchinmayarao@gmail.com'
+EMAIL_HOST_PASSWORD = 'bskp syaj wiqk lvyv'

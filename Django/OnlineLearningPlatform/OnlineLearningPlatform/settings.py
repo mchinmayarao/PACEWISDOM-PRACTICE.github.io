@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt",
     'rest_framework_simplejwt.token_blacklist',
     'django_filters',
+    "payments",
+    "payment_gateway",
 ]
 
 MIDDLEWARE = [
@@ -164,3 +166,12 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'mchinmayarao@gmail.com'
 EMAIL_HOST_PASSWORD = 'bskp syaj wiqk lvyv'
+
+
+
+PAYMENT_HOST = 'localhost:8000'
+PAYMENT_MODEL = 'payment_gateway.Payment'
+# PAYMENT_USES_SSL = False
+PAYMENT_VARIANTS = {
+    'default': ('payments.dummy.DummyProvider', {})
+}

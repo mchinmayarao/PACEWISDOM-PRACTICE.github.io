@@ -29,5 +29,6 @@ class Enrollment(models.Model):
     enrolled_at = models.DateTimeField(auto_now_add=False)
     student= models.ForeignKey("users.User",on_delete=models.CASCADE)
     course = models.ForeignKey("courses.Course", on_delete=models.CASCADE)
+    transaction_id = models.CharField(max_length=100, blank=True, null=True)
 
     

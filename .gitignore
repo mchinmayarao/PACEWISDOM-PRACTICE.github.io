@@ -2,3 +2,11 @@ Django/txt.md
 Django/Blog.md
 Django/OnlineCourse.md
 Django/OnlineLeariningPlatform.md
+Django/OnlineLearningPlatform/UI/app.js
+Django/OnlineLearningPlatform/UI/course-detail.html
+Django/OnlineLearningPlatform/UI/index.html
+Django/OnlineLearningPlatform/UI/login.html
+Django/OnlineLearningPlatform/UI/payments.html
+Django/OnlineLearningPlatform/UI/signup.html
+Django/OnlineLearningPlatform/UI/student-dashboard.html
+Django/OnlineLearningPlatform/UI/teacher-dashboard.html

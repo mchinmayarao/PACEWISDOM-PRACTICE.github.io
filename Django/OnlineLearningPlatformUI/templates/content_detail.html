@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Content Detail{% endblock %}
+
+{% block content %}
+    <h2>{{ content.title }}</h2>
+    <p>{{ content.content }}</p>
+
+    {% if  user == course.teacher %}
+        <a href="{%url 'content_update' content.course.name content.pk%}" class="btn btn-primary">Edit Content</a>
+
+        <form action="{%url 'content_delete' content.course.name content.pk %}" method="post" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger ">Delete Content</button>
+        </form>
+    {% endif %}
+
+{% endblock %}

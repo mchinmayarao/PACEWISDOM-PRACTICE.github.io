@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Course Detail{% endblock %}
+
+{% block content %}
+    <h2>{{ course.name }}</h2>
+    <p>{{ course.description }}</p>
+    {% if not is_enrolled and user != course.teacher %}
+        <a href="{%url 'checkout' course.name %}"><button class="btn btn-success ">Purchase Course</button></a>
+    <br><br>
+    {% endif %}
+    
+    <a href="{% url 'content_list' course.name %}">
+        <button class="btn btn-success">View Contents</button>
+    </a>
+    <br><br>
+
+    <p>Price: {{ course.price }}</p>
+    <p>Teacher: {{ course.teacher}}</p>
+    <p>Created At: {{ course.created_at}} </p>
+    <p>Updated At: {{ course.updated_at}} </p>
+    
+    
+{% endblock %}

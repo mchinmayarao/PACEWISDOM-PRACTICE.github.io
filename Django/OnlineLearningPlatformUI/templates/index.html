@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="text-center">
+        <h1>Welcome to the Online Learning Platform</h1>
+        <p>Explore and purchase the best courses.</p>
+        <a href="{% url 'course_list' %}" class="btn btn-primary">Browse Courses</a>
+    </div>
+</div>
+    
+    
+{% endblock %}

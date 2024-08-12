@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}Teacher Dashboard{% endblock %}
+
+{% block content %}
+
+    <h2>Teacher Dashboard</h2>
+    <a href="{% url 'course_create' %}" class="btn btn-primary mb-3">Create Course</a>
+    <h3 class="mt-4">Your Courses</h3>
+    <div class="list-group">
+        {% for course in courses %}
+        <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            <a href="{% url 'course_detail' course.name %}" style="flex-grow: 1; text-decoration: none; ">
+                {{ course.name }}
+            </a>
+    
+            <div >
+                <a href="{% url 'course_update' course.name %}">
+                    <button class="btn btn-primary btn-sm">Edit</button>
+                </a>
+    
+                <form action="{% url 'course_delete' course.name %}" method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                </form>
+            </div>
+        </div>
+    {% empty %}
+        <p>No courses available.</p>
+    {% endfor %}
+    
+    </div>
+    <h3 class="mt-4">Students Who Purchased Your Courses</h3>
+    <div class="list-group">
+        {% for subscriber in subscribers %}
+            <div class="list-group-item list-group-item-action">{{ subscriber.name }} - {{ subscriber.course }}</div>
+        {% empty %}
+            <p>No students have purchased your courses yet.</p>
+        {% endfor %}
+
+        
+    </div>
+
+    <div>
+        <h3 class="mt-4">Subscribed Courses</h3>
+        <br>
+        <div class="list-group">
+            {% for course in subscribed_courses %}
+                <a href="{% url 'course_detail' course.name %}" class="list-group-item list-group-item-action">{{ course.name }}</a>
+            {% empty %}
+                <p>No courses subscribed yet.</p>
+            {% endfor %}
+        </div>
+    </div>
+ 
+
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Course Form{% endblock %}
+
+{% block content %}
+<h2>Create/Edit Course</h2>
+<form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        {{ form.name.label_tag }}
+        <input type="text" class="form-control" id="courseTitle" name="{{ form.name.name }}" value="{{ form.name.value|default_if_none:'' }}" placeholder="Enter course title">
+        {{ form.name.errors }}
+    </div>
+
+    <div class="form-group">
+        {{ form.description.label_tag }}
+        <textarea class="form-control" id="courseDescription" name="{{ form.description.name }}" rows="3" placeholder="Enter course description">{{ form.description.value|default_if_none:'' }}</textarea>
+        {{ form.description.errors }}
+    </div>
+
+    <div class="form-group">
+        {{ form.price.label_tag }}
+        <input type="number" class="form-control" id="coursePrice" name="{{ form.price.name }}" value="{{ form.price.value|default_if_none:'' }}" placeholder="Enter course price">
+        {{ form.price.errors }}
+    </div>
+
+    <button type="submit" class="btn btn-success">Save Course</button>
+
+    {% if form.name.value %}
+        <a href="{%url 'content_list' course.name%}" class = "btn btn-primary"> Edit Content</a>
+    {% endif %}
+</form>
+
+{% endblock %}

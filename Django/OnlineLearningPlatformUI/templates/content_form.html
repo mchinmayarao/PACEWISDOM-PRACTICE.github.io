@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Content Form{% endblock %}
+
+{% block content %}
+    <h2>Create/Edit Content</h2>
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="form-group">
+            {{ form.title.label_tag }}
+            <input type="text" class="form-control" id="contentTitle" name="{{ form.title.name }}" value="{{ form.title.value|default_if_none:'' }}" placeholder="Enter content title">
+            {{ form.title.errors }}
+        </div>
+        
+        <div class="form-group">
+            {{ form.content.label_tag }}
+            <textarea class="form-control" id="contentDescription" name="{{ form.content.name }}" rows="3" placeholder="Enter content description">{{ form.content.value|default_if_none:'' }}</textarea>
+            {{ form.content.errors }}
+        </div>
+
+        <button type="submit" class="btn btn-success">Save</button>
+    </form>
+{% endblock %}

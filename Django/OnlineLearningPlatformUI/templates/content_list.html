@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Content List{% endblock %}
+
+{% block content %}
+    <h2>Content for {{ course }}</h2>
+    {% if user == course.teacher %}
+        <a href="{%url 'content_create' course%}" class="btn btn-primary">Add New Content</a>
+    {% endif %}
+    <ul class="list-group mt-3">
+        {% for content in contents %}
+    <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+        <a href="{% url 'content_detail' course content.pk %}" style="flex-grow: 1; text-decoration: none;">
+            {{ content.title }}
+        </a>
+
+       {% if user == course.teacher %}
+            <div>
+                <a href="{% url 'content_update' course content.pk %}">
+                    <button class="btn btn-primary btn-sm">Edit</button>
+                </a>
+
+                <form action="{% url 'content_delete' course content.pk %}" method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                </form>
+            </div>
+       {% endif %}
+    </div>
+{% empty %}
+    <p>No contents added yet!</p>
+{% endfor %}
+    </ul>
+{% endblock %}

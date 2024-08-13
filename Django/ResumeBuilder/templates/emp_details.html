@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Employee Details</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>{{ employee.name }}</h3>
+                        <p>Employee ID: {{ employee.empid }}</p>
+                    </div>
+                    <div class="card-body">
+                        <h5>Summary</h5>
+                        <p>{{ employee.summary }}</p>
+
+                        <h5>Personal Details</h5>
+                        <p>Address: {{ employee.personal_info.address }}</p>
+
+                        <h5>Technical Skills</h5>
+                        <p>{{ employee.technical_skills}}</p>
+
+                        <h5>Project Details</h5>
+                        <ul>
+                            {% for emp_project in employee_projects %}
+                                <li>
+                                    Project: {{ emp_project.project.name }}<br>
+                                    Role: {{ emp_project.role }}<br>
+                                    Contributions: {{ emp_project.contributions }}
+                                </li>
+                            {% empty %}
+                                <li>No projects assigned.</li>
+                            {% endfor %}
+                        </ul>
+
+                        <a href="{%url 'generate_pdf'%}?empid={{employee.empid}}" class="btn btn-primary btn-block mt-4">Download Resume</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

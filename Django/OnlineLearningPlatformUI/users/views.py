@@ -53,13 +53,9 @@ class DashboardView(LoginRequiredMixin,View):
             enrollments = Enrollment.objects.filter(course__in =courses)
             subscribers = [{'name':item.student.name,'course':item.course.name} for item in enrollments]
 
-            enrolled_courses = Enrollment.objects.filter(student = request.user)
-            subscribed_courses = [item.course for item in enrolled_courses]
+            subscribed_courses = Enrollment.objects.filter(student = request.user)
 
-            print(len(enrolled_courses))
             return render(request,'teacher_dashboard.html',{"subscribers":subscribers,"courses":courses,"subscribed_courses":subscribed_courses})
         else:
-            enrollments = Enrollment.objects.filter(student = request.user)
-            subscribed_courses = [item.course for item in enrollments]
-            print(subscribed_courses)
+            subscribed_courses = Enrollment.objects.filter(student = request.user)
             return render(request,'student_dashboard.html',{"subscribed_courses":subscribed_courses})

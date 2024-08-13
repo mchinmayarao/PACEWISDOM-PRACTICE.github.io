@@ -7,8 +7,16 @@
     <h3 class="mt-4">Subscribed Courses</h3>
     <br>
     <div class="list-group">
-        {% for course in subscribed_courses %}
-            <a href="{% url 'course_detail' course.name %}" class="list-group-item list-group-item-action">{{ course.name }}</a>
+        {% for item in subscribed_courses %}
+            <a href="{% url 'course_detail' item.course.name %}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                {{ item.course.name }}
+    
+                {% if item.status == 'active' %}
+                    <span class="badge bg-success">Active</span>
+                {% elif item.status == 'expired' %}
+                    <span class="badge bg-danger">Expired</span>
+                {% endif %}
+            </a>
         {% empty %}
             <p>No courses subscribed yet.</p>
         {% endfor %}

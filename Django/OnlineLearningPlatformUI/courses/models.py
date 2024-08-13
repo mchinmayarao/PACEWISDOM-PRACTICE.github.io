@@ -25,10 +25,24 @@ class Content(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     course = models.ForeignKey("Course",on_delete=models.CASCADE)
 
+    
 class Enrollment(models.Model):
-    enrolled_at = models.DateTimeField(default=timezone.now,auto_now_add=False)
-    student= models.ForeignKey("users.User",on_delete=models.CASCADE)
+    STATUS_CHOICES = [
+        ('active', 'Active'),
+        ('expired', 'Expired'),
+    ]
+
+    enrolled_at = models.DateTimeField(default=timezone.now)
+    student = models.ForeignKey("users.User", on_delete=models.CASCADE)
     course = models.ForeignKey("courses.Course", on_delete=models.CASCADE)
     transaction_id = models.CharField(max_length=100, blank=True, null=True)
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='active')
 
-    
+    def update_status(self):
+
+        if self.status == 'active' and timezone.now() >= self.enrolled_at + timezone.timedelta(minutes=3):
+            self.status = 'expired'
+            super().save(update_fields=['status'])  
+
+    def save(self, *args, **kwargs):
+        super(Enrollment, self).save(*args, **kwargs)

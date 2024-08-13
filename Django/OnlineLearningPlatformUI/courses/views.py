@@ -37,11 +37,18 @@ class CourseDetailView(DetailView):
         course = self.get_object()
         user = self.request.user
 
-        # Check if user is enrolled in the course
+
         if user.is_authenticated:
-            context['is_enrolled'] = Enrollment.objects.filter(course=course, student=user).exists()
+            try:
+                enrollment = Enrollment.objects.get(course=course, student=user)
+                context['is_enrolled'] = True
+                context['status'] = enrollment.status
+            except Enrollment.DoesNotExist:
+                context['is_enrolled'] = False
+                context['status'] = 'not_enrolled'
         else:
             context['is_enrolled'] = False
+            context['status'] = 'not_logged_in'
         return context
 
 

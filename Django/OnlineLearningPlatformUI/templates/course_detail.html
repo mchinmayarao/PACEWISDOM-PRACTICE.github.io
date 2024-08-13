@@ -3,11 +3,28 @@
 {% block title %}Course Detail{% endblock %}
 
 {% block content %}
-    <h2>{{ course.name }}</h2>
-    <p>{{ course.description }}</p>
-    {% if not is_enrolled and user != course.teacher %}
-        <a href="{%url 'checkout' course.name %}"><button class="btn btn-success ">Purchase Course</button></a>
-    <br><br>
+    <h2>
+        {{ course.name }}
+        {% if status == 'active' %}
+            <span class="badge bg-success">Active</span>
+        {% elif status == 'expired' %}
+            <span class="badge bg-danger">Expired</span>
+        {% elif user == course.teacher %}
+        <span class="badge bg-info">Own</span>
+        {% else %}
+            <span class="badge bg-secondary">Not Enrolled</span>
+        {% endif %}
+
+    </h2>
+    <p>{{ course.description }}
+       
+    </p>
+
+   
+
+    {% if status != 'active' and user != course.teacher %}
+        <a href="{% url 'checkout' course.name %}"><button class="btn btn-success">Purchase Course</button></a>
+        <br><br>
     {% endif %}
     
     <a href="{% url 'content_list' course.name %}">

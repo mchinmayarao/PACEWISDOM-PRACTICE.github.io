@@ -7,7 +7,7 @@ import requests
 from django.conf import settings
 from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-
+from django.utils import timezone
 # PayPal API base URL
 PAYPAL_API_BASE = "https://api-m.sandbox.paypal.com"
 PAYPAL_CLIENT_ID = 'ASMly7o3lAUmGJKP3RVgvi2RR-R42QAzBCXNRtYFsoqL-H0O8SzHUXCMTbRKEplsbcZ9ad36zKlQgzRw'
@@ -106,37 +106,46 @@ def capture_order(request, order_id):
         response = requests.post(f"{PAYPAL_API_BASE}/v2/checkout/orders/{order_id}/capture", headers=headers)
         result = handle_response(response)
         
-
-
         if result["httpStatusCode"] in [200, 201]:  
-
             transaction = result["jsonResponse"].get("purchase_units", [{}])[0].get("payments", {}).get("captures", [{}])[0]
             
-            transaction_id1 = transaction.get("id")
-            transaction_id = order_id
+            transaction_id = transaction.get("id")
 
-            print(transaction_id,transaction_id1)
+            print(transaction_id)
 
             request_data = json.loads(request.body)
             course_name = request_data.get("course")
             print("Course Name: ", course_name)
-            
-
 
             user = request.user
             course = Course.objects.get(name=course_name)
-            enrollment, created = Enrollment.objects.get_or_create(
-                student=user,
-                course=course,
-                defaults={'transaction_id': transaction_id}
-            )
 
-            if created:
+
+            enrollment = Enrollment.objects.filter(student=user, course=course).first()
+
+            if enrollment:
+
+                if enrollment.status == 'expired':
+                    
+                    enrollment.status = 'active'
+                    enrollment.enrolled_at = timezone.now()
+                    enrollment.transaction_id = transaction_id
+                    enrollment.save(update_fields=['status', 'enrolled_at', 'transaction_id'])
+                    print("Enrollment renewed")
+                    return JsonResponse({"message": "Payment successful and enrollment renewed!"}, status=200)
+                else:
+                    print("User already enrolled and active")
+                    return JsonResponse({"message": "User already enrolled and course is active."}, status=200)
+            else:
+
+                Enrollment.objects.create(
+                    student=user,
+                    course=course,
+                    transaction_id=transaction_id,
+                    status='active'
+                )
                 print("Enrollment Created")
                 return JsonResponse({"message": "Payment successful and user enrolled!"}, status=200)
-            else:
-                print("User Already Enrolled")
-                return JsonResponse({"message": "User already enrolled."}, status=200)
         else:
             print("Failed to capture order, HTTP Status: ", result["httpStatusCode"])
             return JsonResponse({"error": "Failed to capture order."}, status=result["httpStatusCode"])

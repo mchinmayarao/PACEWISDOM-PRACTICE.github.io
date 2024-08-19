@@ -29,7 +29,7 @@ def employee_details(request):
     return render(request, 'emp_details.html', {'employee': employee,'employee_projects':employee_projects})
 
 
-def header(canvas, doc, header_img_path):
+def header(canvas, header_img_path):
     canvas.saveState()
     header_img = Image(header_img_path, 6.5 * inch, 1 * inch)
     header_img.drawOn(canvas, 0.75 * inch, 10.5 * inch) 
@@ -88,7 +88,7 @@ def generate_pdf(request):
         elements.append(Paragraph(f"<b>Description:</b> {project['description']}", styles['Normal']))
         elements.append(Paragraph(f"<b>Start Date:</b> {project['start_date']}", styles['Normal']))
         elements.append(Paragraph(f"<b>Role:</b> {project['role']}", styles['Normal']))
-        elements.append(Paragraph(f"<b>Contributions:</b>", styles['Normal']))
+        elements.append(Paragraph("<b>Contributions:</b>", styles['Normal']))
         contributions_bullets = [ListItem(Paragraph(contribution, styles['Bullet2'])) for contribution in project['contributions'].split(',')]
         elements.append(ListFlowable(contributions_bullets, bulletType='bullet', start='\u2022'))
         elements.append(Spacer(1, 12))

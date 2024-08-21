@@ -136,6 +136,6 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
 # Cronjob settings
 CRONJOBS = [
-    ('* * * * *', 'dailyRecipeApp.views.send_emails'),# send emails every minute
+    ('0 * * * *', 'dailyRecipeApp.utils.send_emails'),# send emails every minute
 
 ]
